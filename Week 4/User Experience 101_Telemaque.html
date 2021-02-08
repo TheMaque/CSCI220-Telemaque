@@ -19,6 +19,10 @@ Help Jennifer make a good first impression by styling her web page with CSS to m
 <html>
     <head>
         <title>Jennifer's Experiment Details.</title>
+
+        <!--
+                Here i style the headings and change their fonts and colors.
+         -->
         <style>
             h1 {color: yellow; font-family:Verdana, Geneva, Tahoma, sans-serif}
             h2 {color: yellow; font-family:Verdana, Geneva, Tahoma, sans-serif}
@@ -29,10 +33,22 @@ Help Jennifer make a good first impression by styling her web page with CSS to m
 
     <!--
         Under this comment I express the headings and as well as a paragraph of text explaining the experiment.
+
+        As well as i add a image and wrap it to the right of the text.
     -->
 
      <h1>Jennifer's Experiment Details. 📃</h1>   
      <h2>Description:</h2>
+
+     <!--
+                Here i put a border around the image.
+         -->
+     <style>
+         img {
+             
+             border:5px solid #000000
+         }
+     </style>
      <p> <img src="caffeine.jpg" alt ="Caffeine Molecule" style= "width: 250px" style="height: 200px" align="right"> College students consume surprising quantities of <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> on average. This study seeks to determine if a correlation exists between the amount of <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> an individual consumes daily and that individual's grade point average in school.
         The initial experiment included a group, which received daily <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> equal to the national average (Group A), a group which received twice the national daily average (Group B), and a control group which received a placebo (Group C). 
         Preliminary results indicate that average consumption of daily <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> led to a slight and steady increase in <a href="https://en.wikipedia.org/wiki/Grading_in_education"><a href="https://en.wikipedia.org/wiki/Grading_in_education">GPA</a></a> 
@@ -46,6 +62,11 @@ Help Jennifer make a good first impression by styling her web page with CSS to m
 
     <h3>
         ----------------------------------------------------------
+
+
+
+
+
     </h3>
 
         <h2>Steps to Reproduce:</h3>
@@ -117,9 +138,11 @@ Help Jennifer make a good first impression by styling her web page with CSS to m
          
     </body>
 
-
+<!--
+                Here I change the background color of the html.
+         -->
     <style>
-        body {background-color: rgb(180, 180, 180);}
+        body {background-color: rgb(119, 119, 119);}
     </style>
     </head>
     
@@ -128,10 +151,12 @@ Help Jennifer make a good first impression by styling her web page with CSS to m
     ----------------------------------------------------------
    </h3>
    
+
+   <!--
+    Here i add the form to email Jennifer.
+    -->
     <h1>Follow up with Jennifer!</h1>
   
-  
-    
     <form action="mailto:jennifer_scientist@sciencefunding.org" method="POST" name="emailForm">
         <label for="contactName">Name:</label><br/>
         <input type="text" size="contactName" id="contactName"><br><br>
