@@ -8,8 +8,11 @@ Full Name: Reginald Telemaque
 
 Major: Computer Science
 
-Purpose: Jennifer's presentation to investors went extremely well. Thanks to the website you developed for her, she received multiple inquiries about further funding for her research. Now she needs a way to disclose her public sources of funding, as is required by law. Help Jennifer with the next stage of her project by creating a funding disclosure page that links to and from the page you created for the investors. This page should be styled to look professional and present details about her investors in a way that is pleasing to site visitors.
- 
+Purpose: Jennifer is almost ready to present the initial findings of her experiment to investors.
+Thanks to you she has a web page containing the information she wants to communicate. 
+But, she knows that first impressions make a big difference, so she wants to make the information on her web page stand out. 
+Help Jennifer make a good first impression by styling her web page with CSS to make it look more professional and provide a way for investors to get in touch with her
+
 -->
 
 <!DOCTYPE html>
@@ -21,12 +24,25 @@ Purpose: Jennifer's presentation to investors went extremely well. Thanks to the
                 Here i style the headings and change their fonts and colors.
          -->
         <style>
-            h1 {color: yellow; font-family:Verdana, Geneva, Tahoma, sans-serif}
-            h2 {color: yellow; font-family:Verdana, Geneva, Tahoma, sans-serif}
+            h1 {color: rgb(53, 53, 53); font-family:Verdana, Geneva, Tahoma, sans-serif}
+            h2 {color: rgb(28, 45, 194); font-family:Verdana, Geneva, Tahoma, sans-serif}
             h3 {color: black; font-family:Verdana, Geneva, Tahoma, sans-serif}
+            body {background-color: rgb(220, 220, 221);}
+            img {border:5px solid #000000 }
+            nav {background: rgb(133, 172, 172); }
         </style>
     </head>
     <body>
+
+            <nav>
+        
+            <li>Navigation:</li>
+        <ul>
+            
+            <li><a href="Investors.html">Investors</a></li>
+            <li><a href="Working with CSS_Telemaque.html">Experiment</a></li>
+        </ul>
+            </nav>
 
     <!--
         Under this comment I express the headings and as well as a paragraph of text explaining the experiment.
@@ -34,17 +50,15 @@ Purpose: Jennifer's presentation to investors went extremely well. Thanks to the
         As well as i add a image and wrap it to the right of the text.
     -->
 
-     <h1>Jennifer's Experiment Details. 📃</h1>   
+     <h1>Jennifer's Experiment Details. 📃</h1>  
+     
+
      <h2>Description:</h2>
 
      <!--
                 Here i put a border around the image.
          -->
-     <style>
-         img {
-             
-             border:5px solid #000000
-         }
+    
      </style>
      <p> <img src="caffeine.jpg" alt ="Caffeine Molecule" style= "width: 250px" style="height: 200px" align="right"> College students consume surprising quantities of <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> on average. This study seeks to determine if a correlation exists between the amount of <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> an individual consumes daily and that individual's grade point average in school.
         The initial experiment included a group, which received daily <a href="https://en.wikipedia.org/wiki/Caffeine">caffeine</a> equal to the national average (Group A), a group which received twice the national daily average (Group B), and a control group which received a placebo (Group C). 
@@ -133,17 +147,12 @@ Purpose: Jennifer's presentation to investors went extremely well. Thanks to the
         -->
 
          
-    </body>
+
 
 <!--
                 Here I change the background color of the html.
          -->
-    <style>
-        body {background-color: rgb(119, 119, 119);}
-    </style>
-    </head>
-    
-    
+  
    <h3>
     ----------------------------------------------------------
    </h3>
@@ -152,6 +161,8 @@ Purpose: Jennifer's presentation to investors went extremely well. Thanks to the
    <!--
     Here i add the form to email Jennifer.
     -->
+
+  
     <h1>Follow up with Jennifer!</h1>
   
     <form action="mailto:jennifer_scientist@sciencefunding.org" method="POST" name="emailForm">
@@ -165,6 +176,6 @@ Purpose: Jennifer's presentation to investors went extremely well. Thanks to the
         <input type="submit" value="Submit"
     
     <form>
-
+    </body>
     
-</html>X
+</html>
