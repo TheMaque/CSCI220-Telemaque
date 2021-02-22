@@ -1,0 +1,1738 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="keywords"  content="Graphic Design,Computers,Art,Reggie,Telemaque,Reginald,Sports,Sports Design,Football,Basketball,Reggie Telemaque,Reginald Telemaque" />
+      <meta name="description"  content="Official website of Reginald &quot;Reggie&quot; Telemaque. He is a highly motivated and focused driven student athlete at the University of Saint Francis. Reggie is majoring in Computer Science and intend to land some where in the information technology field in either hardware or software based career. Reggie has a long history of honor and persistence in His studies. Graduating with an academic honors diploma in high school. With having taking over 15 college classes over hishigh school career. Leaving high school with over 33 college credits and 3 workplace certifications to show for it." />
+      <meta name="twitter:card"  content="summary_large_image" />
+      <meta name="twitter:site"  content="@AdobePortfolio" />
+      <meta  property="og:title" content="Reggie Telemaque | Official Website - Work" />
+      <meta  property="og:description" content="Official website of Reginald &quot;Reggie&quot; Telemaque. He is a highly motivated and focused driven student athlete at the University of Saint Francis. Reggie is majoring in Computer Science and intend to land some where in the information technology field in either hardware or software based career. Reggie has a long history of honor and persistence in His studies. Graduating with an academic honors diploma in high school. With having taking over 15 college classes over hishigh school career. Leaving high school with over 33 college credits and 3 workplace certifications to show for it." />
+      <meta  property="og:image" content="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/72d758f1-c7f1-47bb-a908-93ebe0367640_rwc_0x0x1920x1080x1920.png?h=e914a78e9413465549a518cb8ec9fb97" />
+        <link rel="icon" href="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/832127da-b0a1-47f5-bc47-21b2bfe532f6_carw_1x1x32.png?h=daedf20f96f46b1c14548082470cf54b" />
+        <link rel="apple-touch-icon" href="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9305ca37-f242-473b-82ff-404f4c989842_carw_1x1x180.png?h=e2feba883b2736a482744edca046e49b" />
+      <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2858c3929f7f9e7ec9d6d8f37eb812e61614032534.css?h=b0a3e316b121f491ba538bff670a41be" type="text/css" />
+    <link rel="canonical" href="https://reginaldtelemaque.com/work" />
+      <title>Reggie Telemaque | Official Website - Work</title>
+    <script type="text/javascript" src="//use.typekit.net/ik/qaiappSdVa061-2cJW-S7sj2PWwLW5S-o0S3h2tm9nJfelGffHYEBsJzwD9oFDIDWDsR5AsKw2MaFRqkFeBR5Qwo5QSDF2b3jRbkwR63FDBcZQ48jQmKZAb-13I7OcuoSeNkieZzde8zOcFzdP37O1gkdDJlic88ikolpWgzS1scdhUTdkoRdhXCHKokZAiTdcBCZYs8demljWBuZPoRdhXCdW83da4XZcNC-Av0jhNlOYgkdDJlic88ikolpWgzS1scdhUTdkoRdhXCScm1-AoydesXZAU8dABUiA90jhNlOYiaikokZAiTdcBCZYs8demljWBuZPoRdhXKgeFhShwKgesD-YjKgeZXdcCKgYFGpcwKgYyKS1w7f6K8UbIbMg65JMJ7f6KcUbIbMg6IJMJ7f6R0UbIbMs65JMJ7f6RzUbIbMs6IJMJ7fbKImsMfeMb6MKG4fJBmIMJjgkMfH6GJ8HbfIMwjgfMfH6GJ1w9gIMbjgfMfqMe6Nvzogb.js?cb=" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+  <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+                <div class="gallery-title"><a href="/work" class="active">Work</a></div>
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+      <div class="page-title">
+        <a href="/socials" >Social</a>
+      </div>
+          </nav>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="http://twitter.com/the_maque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://behance.net/themaque" target="_blank">
+                      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/reginald-telemaque-96354b1a0/" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/reginald.telemaque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://instagram.com/themaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                          c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                          c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                          c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                          c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                          c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                          c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                          c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                          c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                        <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                          c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                        <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://tiktok.com/@themaque" target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path d="M22,10.4c-0.1,0-0.3,0-0.4,0c-1.5,0-2.9-0.7-3.7-2v6.8c0,2.8-2.2,5-5,5s-5-2.2-5-5s2.2-5,5-5l0,0c0.1,0,0.2,0,0.3,0v2.5
+                      	c-0.1,0-0.2,0-0.3,0c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5c1.4,0,2.7-1.1,2.7-2.5l0-11.5H18c0.2,2.1,1.9,3.8,4,3.9L22,10.4"
+                      	/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://youtube.com/themaque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M26.15 16.54c0 0-0.22 1.57-0.9 2.26c-0.87 0.91-1.84 0.91-2.28 0.96C19.78 20 15 20 15 20 s-5.91-0.05-7.74-0.23c-0.51-0.09-1.64-0.07-2.51-0.97c-0.68-0.69-0.91-2.26-0.91-2.26s-0.23-1.84-0.23-3.68v-1.73 c0-1.84 0.23-3.68 0.23-3.68s0.22-1.57 0.91-2.26c0.87-0.91 1.83-0.91 2.28-0.96C10.22 4 15 4 15 4H15c0 0 4.8 0 8 0.2 c0.44 0.1 1.4 0.1 2.3 0.96c0.68 0.7 0.9 2.3 0.9 2.26s0.23 1.8 0.2 3.68v1.73C26.38 14.7 26.1 16.5 26.1 16.54z M12.65 8.56l0 6.39l6.15-3.18L12.65 8.56z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TheMaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M15,4c-4.5,0-8.2,3.7-8.2,8.2c0,3.6,2.4,6.7,5.6,7.8c0.4,0.1,0.6-0.2,0.6-0.4c0-0.2,0-0.8,0-1.5
+                          c-2.3,0.5-2.8-1-2.8-1c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5c0.8,0.1,1.3,0.8,1.3,0.8c0.7,1.3,1.9,0.9,2.4,0.7
+                          c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.7-0.9-3.7-4.1c0-0.9,0.3-1.6,0.8-2.2c-0.1-0.2-0.4-1,0.1-2.2c0,0,0.7-0.2,2.3,0.8
+                          C13.6,8.1,14.3,8,15,8c0.7,0,1.4,0.1,2.1,0.3c1.6-1.1,2.3-0.8,2.3-0.8c0.4,1.1,0.2,2,0.1,2.2c0.5,0.6,0.8,1.3,0.8,2.2
+                          c0,3.2-1.9,3.8-3.7,4c0.3,0.3,0.6,0.8,0.6,1.5c0,1.1,0,2,0,2.3c0,0.2,0.1,0.5,0.6,0.4c3.3-1.1,5.6-4.2,5.6-7.8
+                          C23.2,7.7,19.5,4,15,4z"/>
+                        <path class="st1" d="M9.9,15.8c0,0-0.1,0.1-0.1,0c-0.1,0-0.1-0.1-0.1-0.1c0,0,0.1-0.1,0.1,0C9.9,15.7,9.9,15.7,9.9,15.8L9.9,15.8z
+                           M9.8,15.7"/>
+                        <path class="st1" d="M10.2,16.1c0,0-0.1,0-0.2,0C10,16.1,10,16,10,15.9c0,0,0.1,0,0.2,0C10.3,16,10.3,16.1,10.2,16.1L10.2,16.1z
+                           M10.2,16.1"/>
+                        <path class="st1" d="M10.6,16.6c-0.1,0-0.1,0-0.2-0.1c-0.1-0.1-0.1-0.2,0-0.2c0.1,0,0.1,0,0.2,0.1C10.6,16.5,10.6,16.6,10.6,16.6
+                          L10.6,16.6z M10.6,16.6"/>
+                        <path class="st1" d="M11,17.1c0,0-0.1,0-0.2,0c-0.1-0.1-0.1-0.2,0-0.2c0,0,0.1,0,0.2,0C11,16.9,11.1,17,11,17.1L11,17.1z M11,17.1"
+                          />
+                        <path class="st1" d="M11.6,17.3c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.1-0.2c0-0.1,0.1-0.1,0.2-0.1
+                          C11.6,17.2,11.6,17.3,11.6,17.3L11.6,17.3z M11.6,17.3"/>
+                        <path class="st1" d="M12.3,17.4c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.2-0.1c0-0.1,0.1-0.1,0.2-0.1
+                          C12.2,17.3,12.3,17.3,12.3,17.4L12.3,17.4z M12.3,17.4"/>
+                        <path class="st1" d="M12.9,17.3c0,0.1-0.1,0.1-0.2,0.2c-0.1,0-0.2,0-0.2-0.1c0-0.1,0.1-0.1,0.2-0.2C12.8,17.2,12.9,17.2,12.9,17.3
+                          L12.9,17.3z M12.9,17.3"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://soundcloud.com/themaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path d="M3.1,13.1L3.1,13.1l-0.3,1.5L3,15.9c0,0,0,0.1,0.1,0.1c0,0,0.1,0,0.1-0.1l0,0l0,0l0,0l0.3-1.4L3.1,13.1
+                        C3.3,13.1,3.3,13.1,3.1,13.1z M4.2,12.2C4.2,12.2,4.1,12.1,4.2,12.2c-0.1-0.1-0.1,0-0.1,0l-0.3,2.2l0.3,2.2c0,0,0,0.1,0.1,0.1
+                        c0,0,0.1,0,0.1-0.1l0.3-2.2L4.2,12.2z M7.9,10.3c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4L7.8,17c0,0.1,0.1,0.1,0.1,0.1C8,17.1,8,17,8,17l0,0
+                        l0.3-2.6l-0.1-4C8,10.3,8,10.3,7.9,10.3z M6,11.7c-0.1,0-0.1,0-0.1,0.1l-0.3,2.6L5.9,17c0,0.1,0,0.1,0.1,0.1c0.1,0,0.1,0,0.1-0.1
+                        l0.3-2.6l-0.3-2.6C6.1,11.7,6.1,11.7,6,11.7z M10,17.1c0.1,0,0.3-0.1,0.3-0.3l0.1-2.6L10.2,9c0-0.1-0.1-0.3-0.3-0.3
+                        C9.8,8.7,9.7,8.8,9.7,9l-0.1,5.3l0.1,2.6C9.7,17.1,9.8,17.1,10,17.1z M13.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0l0,0l0.1-2.5l-0.1-6.1
+                        C14.2,8.1,14,8,13.9,8c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.1l0.1,2.5C13.6,17,13.8,17.1,13.9,17.1z M11.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0
+                        l0.1-2.5l-0.1-5.3c0-0.1-0.1-0.3-0.3-0.3S11.6,9,11.6,9.1l-0.1,5.3l0.1,2.5C11.6,17,11.7,17.1,11.9,17.1z M7,17.1
+                        c0.1,0,0.1-0.1,0.1-0.1l0.3-2.6L7.1,12c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0-0.1,0.1l-0.1,2.5L6.8,17C6.8,17.1,6.8,17.1,7,17.1z
+                         M5,17C5,17,5.2,17,5,17l0.4-2.6l-0.3-2.6c0-0.1,0-0.1-0.1-0.1c0,0-0.1,0-0.1,0.1l-0.3,2.6L5,17C4.9,17,5,17,5,17z M13,9
+                        c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.2l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-5.2C13.2,9.1,13.1,9,13,9z
+                         M8.9,17.1C9,17.1,9,17,9,17l0.1-2.6L9,9.5c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4.9L8.7,17
+                        C8.7,17.1,8.9,17.1,8.9,17.1z M11.2,17L11.2,17l0.1-2.5l-0.1-5.5c0-0.1-0.1-0.3-0.3-0.3c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.5l0.1,2.5
+                        c0,0.1,0.1,0.3,0.3,0.3C11,17.1,11.2,17.1,11.2,17L11.2,17z M24.1,11.3c-0.4,0-0.8,0.1-1.1,0.3c-0.3-2.7-2.5-4.8-5.2-4.8
+                        c-0.7,0-1.4,0.1-1.9,0.4c-0.3,0.1-0.3,0.1-0.3,0.4V17c0,0.1,0.1,0.3,0.3,0.4h8.2c1.6,0,3-1.4,3-3C27.1,12.6,25.8,11.3,24.1,11.3z
+                         M15,7.5c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.7l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-6.7
+                        C15.3,7.6,15.1,7.5,15,7.5z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:reggiemaque@gmail.com">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                        <g>
+                          <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"/>
+                        </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+    <header class="site-header js-site-header  js-fixed-nav" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="top-start">
+        <nav class="nav-container" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+                <div class="gallery-title"><a href="/work" class="active">Work</a></div>
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+      <div class="page-title">
+        <a href="/contact" >Contact</a>
+      </div>
+      <div class="page-title">
+        <a href="/socials" >Social</a>
+      </div>
+        </nav>
+        <div class="logo-wrap" data-context="theme.logo.header" data-hover-hint="logo" data-hover-hint-placement="bottom-start">
+          <div class="logo e2e-site-logo-text logo-image  ">
+    <a href="/home" class="image-normal image-link">
+      <img src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d2ac6779-34d7-4129-808f-055fcf5f850f_rwc_0x0x1793x1800x4096.png?h=96667e019eafe84a04c41939936e24b2" alt="Reginald Telemaque's Graphic Portfolio.">
+    </a>
+          </div>
+        </div>
+        <div class="social pf-nav-social" data-context="theme.nav" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+          <ul>
+                  <li>
+                    <a href="http://twitter.com/the_maque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://behance.net/themaque" target="_blank">
+                      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/reginald-telemaque-96354b1a0/" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                        c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                        C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/reginald.telemaque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://instagram.com/themaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                          c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                          c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                          c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                          c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                          c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                          c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                          c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                          c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                        <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                          c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                        <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://tiktok.com/@themaque" target="_blank">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path d="M22,10.4c-0.1,0-0.3,0-0.4,0c-1.5,0-2.9-0.7-3.7-2v6.8c0,2.8-2.2,5-5,5s-5-2.2-5-5s2.2-5,5-5l0,0c0.1,0,0.2,0,0.3,0v2.5
+                      	c-0.1,0-0.2,0-0.3,0c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5c1.4,0,2.7-1.1,2.7-2.5l0-11.5H18c0.2,2.1,1.9,3.8,4,3.9L22,10.4"
+                      	/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://youtube.com/themaque" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M26.15 16.54c0 0-0.22 1.57-0.9 2.26c-0.87 0.91-1.84 0.91-2.28 0.96C19.78 20 15 20 15 20 s-5.91-0.05-7.74-0.23c-0.51-0.09-1.64-0.07-2.51-0.97c-0.68-0.69-0.91-2.26-0.91-2.26s-0.23-1.84-0.23-3.68v-1.73 c0-1.84 0.23-3.68 0.23-3.68s0.22-1.57 0.91-2.26c0.87-0.91 1.83-0.91 2.28-0.96C10.22 4 15 4 15 4H15c0 0 4.8 0 8 0.2 c0.44 0.1 1.4 0.1 2.3 0.96c0.68 0.7 0.9 2.3 0.9 2.26s0.23 1.8 0.2 3.68v1.73C26.38 14.7 26.1 16.5 26.1 16.54z M12.65 8.56l0 6.39l6.15-3.18L12.65 8.56z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/TheMaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <g>
+                        <path class="st0" d="M15,4c-4.5,0-8.2,3.7-8.2,8.2c0,3.6,2.4,6.7,5.6,7.8c0.4,0.1,0.6-0.2,0.6-0.4c0-0.2,0-0.8,0-1.5
+                          c-2.3,0.5-2.8-1-2.8-1c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5c0.8,0.1,1.3,0.8,1.3,0.8c0.7,1.3,1.9,0.9,2.4,0.7
+                          c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.7-0.9-3.7-4.1c0-0.9,0.3-1.6,0.8-2.2c-0.1-0.2-0.4-1,0.1-2.2c0,0,0.7-0.2,2.3,0.8
+                          C13.6,8.1,14.3,8,15,8c0.7,0,1.4,0.1,2.1,0.3c1.6-1.1,2.3-0.8,2.3-0.8c0.4,1.1,0.2,2,0.1,2.2c0.5,0.6,0.8,1.3,0.8,2.2
+                          c0,3.2-1.9,3.8-3.7,4c0.3,0.3,0.6,0.8,0.6,1.5c0,1.1,0,2,0,2.3c0,0.2,0.1,0.5,0.6,0.4c3.3-1.1,5.6-4.2,5.6-7.8
+                          C23.2,7.7,19.5,4,15,4z"/>
+                        <path class="st1" d="M9.9,15.8c0,0-0.1,0.1-0.1,0c-0.1,0-0.1-0.1-0.1-0.1c0,0,0.1-0.1,0.1,0C9.9,15.7,9.9,15.7,9.9,15.8L9.9,15.8z
+                           M9.8,15.7"/>
+                        <path class="st1" d="M10.2,16.1c0,0-0.1,0-0.2,0C10,16.1,10,16,10,15.9c0,0,0.1,0,0.2,0C10.3,16,10.3,16.1,10.2,16.1L10.2,16.1z
+                           M10.2,16.1"/>
+                        <path class="st1" d="M10.6,16.6c-0.1,0-0.1,0-0.2-0.1c-0.1-0.1-0.1-0.2,0-0.2c0.1,0,0.1,0,0.2,0.1C10.6,16.5,10.6,16.6,10.6,16.6
+                          L10.6,16.6z M10.6,16.6"/>
+                        <path class="st1" d="M11,17.1c0,0-0.1,0-0.2,0c-0.1-0.1-0.1-0.2,0-0.2c0,0,0.1,0,0.2,0C11,16.9,11.1,17,11,17.1L11,17.1z M11,17.1"
+                          />
+                        <path class="st1" d="M11.6,17.3c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.1-0.2c0-0.1,0.1-0.1,0.2-0.1
+                          C11.6,17.2,11.6,17.3,11.6,17.3L11.6,17.3z M11.6,17.3"/>
+                        <path class="st1" d="M12.3,17.4c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.2-0.1c0-0.1,0.1-0.1,0.2-0.1
+                          C12.2,17.3,12.3,17.3,12.3,17.4L12.3,17.4z M12.3,17.4"/>
+                        <path class="st1" d="M12.9,17.3c0,0.1-0.1,0.1-0.2,0.2c-0.1,0-0.2,0-0.2-0.1c0-0.1,0.1-0.1,0.2-0.2C12.8,17.2,12.9,17.2,12.9,17.3
+                          L12.9,17.3z M12.9,17.3"/>
+                      </g>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="http://soundcloud.com/themaque" target="_blank">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                      <path d="M3.1,13.1L3.1,13.1l-0.3,1.5L3,15.9c0,0,0,0.1,0.1,0.1c0,0,0.1,0,0.1-0.1l0,0l0,0l0,0l0.3-1.4L3.1,13.1
+                        C3.3,13.1,3.3,13.1,3.1,13.1z M4.2,12.2C4.2,12.2,4.1,12.1,4.2,12.2c-0.1-0.1-0.1,0-0.1,0l-0.3,2.2l0.3,2.2c0,0,0,0.1,0.1,0.1
+                        c0,0,0.1,0,0.1-0.1l0.3-2.2L4.2,12.2z M7.9,10.3c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4L7.8,17c0,0.1,0.1,0.1,0.1,0.1C8,17.1,8,17,8,17l0,0
+                        l0.3-2.6l-0.1-4C8,10.3,8,10.3,7.9,10.3z M6,11.7c-0.1,0-0.1,0-0.1,0.1l-0.3,2.6L5.9,17c0,0.1,0,0.1,0.1,0.1c0.1,0,0.1,0,0.1-0.1
+                        l0.3-2.6l-0.3-2.6C6.1,11.7,6.1,11.7,6,11.7z M10,17.1c0.1,0,0.3-0.1,0.3-0.3l0.1-2.6L10.2,9c0-0.1-0.1-0.3-0.3-0.3
+                        C9.8,8.7,9.7,8.8,9.7,9l-0.1,5.3l0.1,2.6C9.7,17.1,9.8,17.1,10,17.1z M13.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0l0,0l0.1-2.5l-0.1-6.1
+                        C14.2,8.1,14,8,13.9,8c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.1l0.1,2.5C13.6,17,13.8,17.1,13.9,17.1z M11.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0
+                        l0.1-2.5l-0.1-5.3c0-0.1-0.1-0.3-0.3-0.3S11.6,9,11.6,9.1l-0.1,5.3l0.1,2.5C11.6,17,11.7,17.1,11.9,17.1z M7,17.1
+                        c0.1,0,0.1-0.1,0.1-0.1l0.3-2.6L7.1,12c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0-0.1,0.1l-0.1,2.5L6.8,17C6.8,17.1,6.8,17.1,7,17.1z
+                         M5,17C5,17,5.2,17,5,17l0.4-2.6l-0.3-2.6c0-0.1,0-0.1-0.1-0.1c0,0-0.1,0-0.1,0.1l-0.3,2.6L5,17C4.9,17,5,17,5,17z M13,9
+                        c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.2l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-5.2C13.2,9.1,13.1,9,13,9z
+                         M8.9,17.1C9,17.1,9,17,9,17l0.1-2.6L9,9.5c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4.9L8.7,17
+                        C8.7,17.1,8.9,17.1,8.9,17.1z M11.2,17L11.2,17l0.1-2.5l-0.1-5.5c0-0.1-0.1-0.3-0.3-0.3c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.5l0.1,2.5
+                        c0,0.1,0.1,0.3,0.3,0.3C11,17.1,11.2,17.1,11.2,17L11.2,17z M24.1,11.3c-0.4,0-0.8,0.1-1.1,0.3c-0.3-2.7-2.5-4.8-5.2-4.8
+                        c-0.7,0-1.4,0.1-1.9,0.4c-0.3,0.1-0.3,0.1-0.3,0.4V17c0,0.1,0.1,0.3,0.3,0.4h8.2c1.6,0,3-1.4,3-3C27.1,12.6,25.8,11.3,24.1,11.3z
+                         M15,7.5c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.7l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-6.7
+                        C15.3,7.6,15.1,7.5,15,7.5z"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:reggiemaque@gmail.com">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                        <g>
+                          <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"/>
+                        </g>
+                      </svg>
+                    </a>
+                  </li>
+          </ul>
+        </div>
+        <div class="hamburger-click-area js-hamburger">
+          <div class="hamburger">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+    </header>
+    <div class="header-placeholder"></div>
+        <div class="masthead js-masthead-fixed" data-context="page.masthead" data-hover-hint="mastheadOptions" data-hover-hint-placement="top-start">
+          <div class="masthead-contents">
+            <div class="masthead-text js-masthead-text">
+              <div data-context="page.masthead" data-hover-hint="mastheadTitle"><h1 decorator="inlineTextEditable" contenteditable="false" class="js-inline-text-editable preserve-whitespace main-text rich-text module-text" data-text-keypath="customizations.masthead.title.text" value="Hi, my name is Reggie Telemaque!">Hi, my name is Reggie Telemaque!</h1></div>
+              <div data-context="page.masthead" data-hover-hint="mastheadText"><p decorator="inlineTextEditable" contenteditable="false" class="js-inline-text-editable preserve-whitespace main-text rich-text module-text" data-text-keypath="page.masthead.text.text" value="student athlete and computer science major at the University of Saint Francis. Currently a social media assistant for the University Of Saint Francis Football Team. Available for freelance. Welcome to my world. 🌎">student athlete and computer science major at the University of Saint Francis. Currently a social media assistant for the University Of Saint Francis Football Team. Available for freelance. Welcome to my world. 🌎</p></div>
+              <div class="masthead-buttons">
+                
+              </div>
+                <div class="masthead-arrow-container js-masthead-arrow" data-context="page.masthead" data-hover-hint="scrollDownArrow">
+                  <div class="masthead-arrow"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="masthead-placeholder"></div>
+  <div class="site-wrap cfix js-site-wrap">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+        <main>
+          <section class="project-covers" data-context="page.gallery.covers">
+          <a class="project-cover js-project-cover-touch hold-space" href="/raidx-business-plan-on-going-personal-project" data-context="pages" data-identity="id:p60249e9b6d615119732a79dacaeacbdaeff1feb9300101e4b87e5" data-hover-hint="galleryPageCover" data-hover-hint-id="p60249e9b6d615119732a79dacaeacbdaeff1feb9300101e4b87e5">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x32.png?h=8ee95e2129bb9ab7d1d64aab8186a090"
+              data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1916.png?h=061fbfca6a90537e1b190f0828b98f11"
+              data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x640.png?h=8ce9b3438cf44f35fab9e4fc129cc3c5 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1280.png?h=a4a4ec9a117d38436dc888465afc5496 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1366.png?h=afc2e5a56666fe60fe7635583abe7838 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1920.png?h=b79906d68289704669bbaed287b0e107 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1916.png?h=061fbfca6a90537e1b190f0828b98f11 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e2bcd804-e586-41f6-9188-e3174ea0e9df_rwc_0x0x1916x1080x1916.png?h=061fbfca6a90537e1b190f0828b98f11 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Raid•X Business Plan. [On going personal project]</div>
+                      <div class="description">Personal project and business made for my Business 101 class business plan and logo design.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/not-a-project-a-new-position-life-moment" data-context="pages" data-identity="id:p6021c38ef27dcff389c13669ee94391772cf7f710db92bda4ce7b" data-hover-hint="galleryPageCover" data-hover-hint-id="p6021c38ef27dcff389c13669ee94391772cf7f710db92bda4ce7b">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x32.png?h=7bae6c21fc79ce0d3da21d9a15184292"
+              data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_car_16x9.png?h=becd10f8f69104dd35bf80cd10169718"
+              data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x640.png?h=4100ea69730028bf8431a4c4f5720698 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x1280.png?h=0e9b7e66dc5e7057c465308ed4a68a99 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x1366.png?h=3bcfd139c74bee17ccabbd5da7c2c63a 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x1920.png?h=e3a07f951dd1990f55162d0902c96bc6 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x2560.png?h=f45441cb579f8344e612bc964a368a3b 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6fff5fdc-75c5-406f-9973-64c348a62167_carw_16x9x5120.png?h=833397fd8535880caf5583c0bf5d8641 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Not a project: A new position! (Life moment.)</div>
+                      <div class="description">As of today I am ecstatic to have a new opportunity! I am officially employed at Lowe’s as a part time Receiver/Stocker! With this job I will be working to fulfill customers orders and help with curbside pickup. I am excited to help customers with a ride range of home improvement needs and “do it right- for less!”</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-nsd-21-protect-the-fort" data-context="pages" data-identity="id:p601b20894415672951a8389fd4f846cab0c46e1daed1318dd2419" data-hover-hint="galleryPageCover" data-hover-hint-id="p601b20894415672951a8389fd4f846cab0c46e1daed1318dd2419">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x32.png?h=aebb95c2c0f50ac0b2e98687c936bd78"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_car_16x9.png?h=9f1f8a5233ab5b960ef248bbbc99d664"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x640.png?h=2454904d1183ca8fa1a803d2e7b92248 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x1280.png?h=ca6a75073a922b43e347c3ea5bf73684 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x1366.png?h=a0a05758ff7d26d5bd622af5dc1e4c3e 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x1920.png?h=1087bed52c56d27e89e97a55e4811812 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x2560.png?h=103337432b4dede378a59f8bd04aeab1 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/ccd012c2-e301-4299-a853-2f1ae00dbeaa_carw_16x9x5120.png?h=4275ecd66819a75adf20c1af4665ddaa 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football NSD 21 - &quot;Protect the Fort&quot;</div>
+                      <div class="description">University of Saint Francis (IN) National Signing Day 2021 Content.
+
+Based off the historic old fort on spy run ave in Fort Wayne.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/patriot-ag-solutions-logo-design" data-context="pages" data-identity="id:p600346027aa5db490240708f84fed5580ea8461745316c3dbb075" data-hover-hint="galleryPageCover" data-hover-hint-id="p600346027aa5db490240708f84fed5580ea8461745316c3dbb075">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x32.png?h=d81fd15bce3c3f9b4e3dc66c14ace339"
+              data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1907.png?h=5b148df42d5786bbfdbdf4d51d5adb6f"
+              data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x640.png?h=e83e49ab098b31aa55b7dca0ae0df1b9 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1280.png?h=039f04fa2dd79d16df48bf47c283c910 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1366.png?h=e49a785a57504a129baed4b4df6195fd 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1920.png?h=fb49b87af981f2a4cdfb68a1bd50db2d 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1907.png?h=5b148df42d5786bbfdbdf4d51d5adb6f 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e5ba57e1-befa-4cee-a339-c7f53c9feec0_rwc_320x788x1907x1074x1907.png?h=5b148df42d5786bbfdbdf4d51d5adb6f 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Patriot AG Solutions (LOGO DESIGN)</div>
+                      <div class="description">Client (07//09/2020) : Logo design for https://patriotagsolutions.com/
+
+Patriot provides services that leverage 26 years of commodity experience in both the professional trading and cash grain space.  Patriot will provide the necessary scrutiny of hedging decisions to assist the producers in finding opportunities that correspond with customers needs and preferences. As crop markets develop Patriot will present opportunities from fundamental bias and  proprietary analysis that merge execution zones with appropriate marketing tools.
+
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/imblakevervynckt-channel-revamp-client" data-context="pages" data-identity="id:p5ffddee1b52651197b09c7c248ba70b5f6c1fe875b7033899123c" data-hover-hint="galleryPageCover" data-hover-hint-id="p5ffddee1b52651197b09c7c248ba70b5f6c1fe875b7033899123c">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x32.png?h=c9115e441d9659cb6e30227cf7449b41"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x2000.png?h=02b786acd098d3a7baff41d1b9be3c2a"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x640.png?h=c78076d5476768c4172e0e47e75193ed 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x1280.png?h=1fbc57d0fcd4809c442e4dfc8ab53baa 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x1366.png?h=7298df2b8a8e5851c2b1bfd1a9638bbc 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x1920.png?h=372bb7a3a7ad91b3e0ef09eae114f3c4 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x2000.png?h=02b786acd098d3a7baff41d1b9be3c2a 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b72ad9de-cf33-40de-aa12-d8f9d215933c_rwc_0x0x2000x1127x2000.png?h=02b786acd098d3a7baff41d1b9be3c2a 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">ImBlakeVervynckt Channel Revamp (Client)</div>
+                      <div class="description">Client work for a friend of mine who is becoming a streamer/content creator.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/2021-usf-commit-edits" data-context="pages" data-identity="id:p5fb5357d9e7c22714534804095c5803d63340cf6cd3382d475581" data-hover-hint="galleryPageCover" data-hover-hint-id="p5fb5357d9e7c22714534804095c5803d63340cf6cd3382d475581">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x32.png?h=fe4f9a1f02232aa309127cadf46151b5"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1916.png?h=84cca1c41445f9487db71811caf70978"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x640.png?h=e13121fea819553ed6e0ed81178c3a17 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1280.png?h=4bcb00fae8980d620db94f6b7155a012 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1366.png?h=abd0b83d8663620e4a0e4e31c6238849 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1920.png?h=8bbfb9fd2e6033ee15eb27011fc50bc6 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1916.png?h=84cca1c41445f9487db71811caf70978 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/39b12971-e2f9-41ba-934f-8db1a26597b3_rwc_0x0x1916x1080x1916.png?h=84cca1c41445f9487db71811caf70978 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">2021 USF Commit Edits.</div>
+                      <div class="description">Committed edits for recruits of USF Football.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-class-of-21-official-offer" data-context="pages" data-identity="id:p5fa4a0b301bb281eb77c3a095246262e2982934aeeae3fd495c0d" data-hover-hint="galleryPageCover" data-hover-hint-id="p5fa4a0b301bb281eb77c3a095246262e2982934aeeae3fd495c0d">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x32.png?h=0a9b3e0760f22733527740a1e8a864be"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_car_16x9.png?h=65903e5b48b3fe70c35199ded33eab20"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x640.png?h=19fb0c93ea9a0bfe7bf35ff021de2918 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x1280.png?h=e5aa22c522ab98a7ce35c11de78f5358 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x1366.png?h=ff4947f66642f2dac54d6584dbdcd7e6 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x1920.png?h=3d19ab0b241a1a392cb6cdb8b1f74363 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x2560.png?h=3d5ac5556cd2338c4a7c3124967add4c 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/07db4dea-5e0a-4d90-a8d9-67ada452837c_carw_16x9x5120.png?h=e99003d5523d63119b3532f09c6ae55e 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football Class of 21' Official Offer Poster</div>
+                      <div class="description">Official offer poster to be given to recruits for their official offers for the class of 21'.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/happy-halloween-usf-football" data-context="pages" data-identity="id:p5fa4a01c9723fba212904e7394b7f4512da612befd94870d95bb1" data-hover-hint="galleryPageCover" data-hover-hint-id="p5fa4a01c9723fba212904e7394b7f4512da612befd94870d95bb1">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x32.png?h=c279c233aa341c77340eaa26e39217c8"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_car_16x9.png?h=24c93cfceecdc0d5d38d581a04cc0980"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x640.png?h=d46521a1574f70321b148ed6926b4f2d 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x1280.png?h=bcd25ee23cb07b950f039a82bb63905d 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x1366.png?h=2528eedd3cba2ad4843e00a7393f9c72 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x1920.png?h=f5133e864be02d90ec5e0151b0a1eda1 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x2560.png?h=c3feb524a23bd7124c438283b3ea10e9 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/2206a4a7-c2f5-4870-a82f-e2324c33c585_carw_16x9x5120.png?h=fd6f42a0753331e427062c6840cbc110 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Happy Halloween (USF Football)</div>
+                      <div class="description">A little fun spooky post for the USF Football team socials!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-away-uniform-reveal" data-context="pages" data-identity="id:p5f9d90f91d1b09bc533c6e3d00cf9334c7d0ff9660e88c01973a9" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f9d90f91d1b09bc533c6e3d00cf9334c7d0ff9660e88c01973a9">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x32.png?h=c635f936d45a5a376857da38055a5936"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_car_16x9.png?h=9fcddcd6adc9d8c283e655223f699f38"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x640.png?h=0bcd64d628d7fa74c10e817f0712a027 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x1280.png?h=9acc68366c2630034de3d82b9c3826ed 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x1366.png?h=fde12032e0a8dabf5c0e2eae95f7217c 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x1920.png?h=beb6f3dad28a0635c86e561668dcd898 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x2560.png?h=ff44b3afb54a175535b67916de789a81 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d32702c6-da98-4a14-a4e6-f0a8cecc788a_carw_16x9x5120.png?h=10b2d1c3bc6474ce382c5de630d6ced6 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Away Uniform Reveal.</div>
+                      <div class="description">Away uniform reveal for the spring season of 2021.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/not-a-project-but-a-accomplishment-life-moment" data-context="pages" data-identity="id:p5f752d6fcfacbe94254730598092d4dd5c678fc94b534d324bc5e" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f752d6fcfacbe94254730598092d4dd5c678fc94b534d324bc5e">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x32.png?h=49e94644aef6c89c78fc25d49a40e066"
+              data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1599.png?h=7a599ad3dd2ff8f0361f851432e576bf"
+              data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x640.png?h=b0e0e1f5bb84aeaa9ee9b67ae287d669 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1280.png?h=e044845af7cb2a0f790919ee6105f8fb 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1366.png?h=7f67adb019f01fd884da86864aabc2df 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1599.png?h=7a599ad3dd2ff8f0361f851432e576bf 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1599.png?h=7a599ad3dd2ff8f0361f851432e576bf 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/670f5d63-f7a8-4788-8c1b-b35794425c88_rwc_0x247x1599x901x1599.png?h=7a599ad3dd2ff8f0361f851432e576bf 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Not a project, but a accomplishment (Life Moment).</div>
+                      <div class="description">Excited to announce my first &quot;official&quot; job as a Product Flow Specialist!
+
+Going to be a little bit out of my comfort zone. This will be a &quot;seasonal&quot; job for the time being (hoping to get a part time position after spring season). However, this will help me later down the road with my career in the computer field. With this job I will be building relationships and helping others see what is possible in the realm of technology.
+
+I made a graphic based on the brand recognition of Best Buy as way to celebrate!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/love-your-brother-usf-united-blm" data-context="pages" data-identity="id:p5f4fc228b0791b83720bb522b66c65c3166fe59f69bf4820a5d08" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f4fc228b0791b83720bb522b66c65c3166fe59f69bf4820a5d08">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x32.png?h=1e28f3b1007332b463ae25718886ad2b"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_car_16x9.png?h=a614dbcd11acf443412c50b9462478ea"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x640.png?h=1c8abefe139a8099212e3c9571733192 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x1280.png?h=62509ea817d7ad9c804d9706cb336ae8 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x1366.png?h=1995d56af372187a58ee924bfafcd590 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x1920.png?h=606fc0328f4107ac704f1467059bb332 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x2560.png?h=b389f647688acb1b37ccf995f154071b 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d4e15f-b725-450e-95bc-03f659f6af19_carw_16x9x5120.png?h=b23b2b751f594405ea5e56c3fd7768e6 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Love Your Brother. (USF United ) #BLM</div>
+                      <div class="description">Project and logo for USF Footbal helping spreading the message of loving your brother. That we all have eachother in the times we are living in. #BlackLivesMatter</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/summit-city-sports-rebrand" data-context="pages" data-identity="id:p5f42f4c4abbad7b0050ac3a02814edc0d2bffba3d618c5b6a7e01" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f42f4c4abbad7b0050ac3a02814edc0d2bffba3d618c5b6a7e01">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x32.png?h=72fee5074f2496e34b6bb40b920d4f93"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_car_16x9.png?h=385978cfcaed0b47d6e667682bf36828"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x640.png?h=1c272667f8bce58d08a51d124b002fa3 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x1280.png?h=4260ab42ab22833f55af676353550a85 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x1366.png?h=906d5825d0af6aef3fd82102a948dc71 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x1920.png?h=792bb90fa4c923b001c544bf40981958 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x2560.png?h=c677178c12ad8a184592ee3d4b5bdacc 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/cfa3f04d-0d1c-4f6f-b788-b60ee21c1cbf_carw_16x9x5120.png?h=08b26a4403f85a702a712dc435009e45 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Summit City Sports | Rebrand</div>
+                      <div class="description">Personal Project: Rebrand for www.summitcitysports.com a organization ran by Jeff Mahoney which broadcasts and streams high school sports in Northeast Indiana.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/dawand-jones-big-thanos" data-context="pages" data-identity="id:p5f392f0d48cb919bbcc7a2698a46006db2be1b16737e852d2c733" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f392f0d48cb919bbcc7a2698a46006db2be1b16737e852d2c733">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x32.png?h=7985833296f4b7c9cbc43dfd8af1308e"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1920.png?h=ebe3522c135e8d4538be6cea982eefdd"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x640.png?h=1a580e7134d48512dba1a21793d2a0a5 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1280.png?h=f283486b1c28630fb522d1b98ac9be9a 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1366.png?h=1a3cbde6a0ae44fd734e91a83e31e3a5 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1920.png?h=ebe3522c135e8d4538be6cea982eefdd 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1920.png?h=ebe3522c135e8d4538be6cea982eefdd 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0806e5ea-148f-4cad-9362-e08dbc8198d2_rwc_0x0x1920x1082x1920.png?h=ebe3522c135e8d4538be6cea982eefdd 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Dawand Jones - &quot;Big Thanos&quot;</div>
+                      <div class="description">Personal Project: A iteration of a favorite player of mine Dawand Jones or nickname &quot;Big Thanos&quot; offensive lineman for the Ohio State University.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-design-overhall" data-context="pages" data-identity="id:p5f1e304533104ab0790c886b753f6d8335b2a559de30e0ca3fc7e" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f1e304533104ab0790c886b753f6d8335b2a559de30e0ca3fc7e">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x32.png?h=109f16c84895eb5a77b3efff86748169"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x640.png?h=eb699e4d40506444ede8f1678253b93b 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f21c2e34-0d69-4b69-9806-a8e55c16ca0d_rwc_0x218x1000x563x1000.png?h=d860f6dc7a059384dde88f1dcf63902a 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football Design Overhall</div>
+                      <div class="description">Just a little update to my older logos and graphics for usf football socials.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/juli-dominguez-for-senate-16-website-redesign" data-context="pages" data-identity="id:p5f1c473584a0c0028bba6262f758f0714a1af03f5b73451e9f268" data-hover-hint="galleryPageCover" data-hover-hint-id="p5f1c473584a0c0028bba6262f758f0714a1af03f5b73451e9f268">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x32.png?h=5932f42e08432cc081bb9e0f5f3c8d7b"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_car_16x9.png?h=b0e5b2a6ac38b49a771903d94dcc2dbd"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x640.png?h=13bcf86e4924ef5b330a51eb091f8e22 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x1280.png?h=371a347c4d3d790364ea9ed6d6556b3b 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x1366.png?h=bb3fc0a4eac4d117a3d171161d1c1b26 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x1920.png?h=2b162c16c89f45c66db23255c7a17591 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x2560.png?h=a4250fd5389e5a1729b1849f8c09b417 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/26b017c9-b64e-4af3-8f53-d435f04412de_carw_16x9x5120.png?h=5f8515d6bc1edda21bce105f4553fdf8 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Juli Dominguez for Senate 16 (Website Redesign.)</div>
+                      <div class="description">Website redesign for Juli Dominguez who is running for Senate 16 in Indiana. She has taught a variety of subjects and grade levels in public schools for over 25 years. Juli was a graduate of Bishop Dwenger High School in Fort Wayne, Indiana and later earned her B.S. in Elementary Education from Ball State University. Wanting to continue her education so that she could better serve her communtiy, she earned her Masters Degree from Northern Arizona University in Secondary Education with an Emphasis on English as a Second Language. While there, she was a member of the Golden Key International Honour Society. 
+
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/summer-usf-football-projects" data-context="pages" data-identity="id:p5ef7fc448e378a286a4c7e307fb53e73ccb34d29d209edf43ec85" data-hover-hint="galleryPageCover" data-hover-hint-id="p5ef7fc448e378a286a4c7e307fb53e73ccb34d29d209edf43ec85">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x32.png?h=b2cf3a936258f6cb2d8835dfd5791375"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_car_16x9.png?h=45d3924096bb4c47e584005cfe373ab3"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x640.png?h=6a4958f0ed7f05fb73eaa4b1d16da7b3 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x1280.png?h=3b691a655787504de9d7b674ee9fb344 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x1366.png?h=9dd3307a33c1686d249e7e0775b7865f 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x1920.png?h=c4452b17de286fa03524a4583b258539 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x2560.png?h=6cf80ef8b20f0dbfe984fa03ed4f3452 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/3aa1bad1-a526-40da-8893-f376a2edc34c_carw_16x9x5120.png?h=d95c2bbb30a88edb32481a816c16b2f6 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Summer USF Football Projects</div>
+                      <div class="description">Compilation of projects done over the summer for USF Football!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/imaging-office-systems-projects" data-context="pages" data-identity="id:p5ed013b22d0ea373a8b5010dba391a936176d2d6002397515463c" data-hover-hint="galleryPageCover" data-hover-hint-id="p5ed013b22d0ea373a8b5010dba391a936176d2d6002397515463c">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x32.png?h=71c2666bfb01d165e3e7cd66535140e2"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_car_16x9.png?h=a09ae48ba9fbde10065370a831fb3fec"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x640.png?h=cca21156674143bbc9933f3210be7161 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x1280.png?h=93c86d537e42b7c297e6c7b68d44d1f6 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x1366.png?h=8659adbb7edbcd9549dbbaffce1ff0fc 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x1920.png?h=3a4fd398dcc4c57e8c54ae6ff5544046 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x2560.png?h=79941b97f3ad7da74172f950f92c5880 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/21afe203-1434-412b-b122-ec34e7a2dd93_carw_16x9x5120.png?h=6298597b395a7da29a73eb1433dfc8d9 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Imaging Office Systems - Projects</div>
+                      <div class="description">Client Work: Imaging Office Systems (https://www.imagingoffice.com/) out of Indianapolis Indiana. A business that is focused on cloud systems for business to save paper and store files online.  Worked with Connor Burgess (Data Management Executive).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/juice-wrld-999-forever-tribute" data-context="pages" data-identity="id:p5ec45407639c436af871c05b36bfc8b14acc4f0244baf078fe729" data-hover-hint="galleryPageCover" data-hover-hint-id="p5ec45407639c436af871c05b36bfc8b14acc4f0244baf078fe729">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x32.png?h=df9fd1a986dbd919a9216afd1d023c57"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_car_16x9.png?h=4b26b2fc1045c6c32b92ce5cf8e13491"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x640.png?h=b0c791554e6f6efacc89662761411c4a 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x1280.png?h=dabf645b2faa3d3dbab95d6f6cc8a1b7 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x1366.png?h=4548db820db27349ebde2bb007b2eacb 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x1920.png?h=a71a4fdbe471e1a893bab8716e6e03fb 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x2560.png?h=df68572b9e3cf809f793fcbb82fde8df 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9fa726ed-660d-4747-a93a-0aa22c47124c_carw_16x9x5120.png?h=dd2687fca0ac50932890ed566e4367dc 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Juice WRLD &quot;999 Forever&quot; Tribute</div>
+                      <div class="description">A tribute for the gone to soon rapper Juice WRLD, one favorite rappers of all time. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/michael-jordan-the-greatest-poster" data-context="pages" data-identity="id:p5ec1e4f162d7bb14609f605bc98b30f3dc27f48eacc9c4c2687c2" data-hover-hint="galleryPageCover" data-hover-hint-id="p5ec1e4f162d7bb14609f605bc98b30f3dc27f48eacc9c4c2687c2">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x32.png?h=caaec6d795cf066d40007736eb229190"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_car_16x9.png?h=5cab7ef6d5efb82be98cd735b9a43c77"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x640.png?h=5faadb7d139300fb2022bf0f3b583cb9 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x1280.png?h=1f9a7796f6b1095449e0b7bc94456202 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x1366.png?h=8b5e88b88dfbab0ade67842bb97e3667 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x1920.png?h=5d35c4dc4c9eb5587b8e275396997cd6 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x2560.png?h=5522aa50b7d09490c688256a70da876f 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d5088da5-8ab9-4027-b54b-f0b9df258f23_carw_16x9x5120.png?h=91672f468a296dc3f5397a517e5f8569 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Michael Jordan &quot;The Greatest&quot; Poster</div>
+                      <div class="description">A project for the last two episodes of the last dance documentary. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/star-wars-day-may-the-cougs-be-with-you-edit" data-context="pages" data-identity="id:p5eb5a1c36628fcf790561c055e8a5fc2d5a7efa65a4e9cbb72ead" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c36628fcf790561c055e8a5fc2d5a7efa65a4e9cbb72ead">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x32.png?h=065721945558bb678fd3dbd0bafc65c9"
+              data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_car_16x9.png?h=4411435343cfbfee9f12e3e941f4acf6"
+              data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x640.png?h=3c05cb058a1def4439f9804a7b3e2f6a 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x1280.png?h=55abde312073b3bd84f84eb36943d362 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x1366.png?h=c409c690299519101e0b960dba5ab7c9 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x1920.png?h=5939fcc079776191a7bb921dc5a2e12a 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x2560.png?h=cf64e7bec410fa22cf3792097bed79a3 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/e1de76fd-2ce1-4a1b-a31e-6cb269492a22_carw_16x9x5120.png?h=a52545151d559c9dce1da23d1d5b0c4e 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Star Wars Day - &quot;May The Cougs Be With You&quot; Edit.</div>
+                      <div class="description">Star Wars Day edit for the University of Saint Francis Football Team.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/joe-tiger-king-burrow" data-context="pages" data-identity="id:p5eb5a1c3324629266ee6a453ed843a5d8978ec4830d3c32aab236" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c3324629266ee6a453ed843a5d8978ec4830d3c32aab236">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x32.png?h=6636f500af40829e094d3e6837567f02"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_car_16x9.png?h=7a7d0d337b1903a503b62173d60b32b0"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x640.png?h=2deac16af3ee472eedfa600380880729 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x1280.png?h=1585079a3e4ae7354cf696ac0bb3e21c 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x1366.png?h=d69ba261605c7be61d64263f960e32ca 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x1920.png?h=42db5a876d097fa48984243af72428fb 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x2560.png?h=96cda480db711e3261bdefe9fb0b55f0 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/930f989d-2f7b-4a01-820e-b35eeccc5144_carw_16x9x5120.png?h=8c5e47c2bbe86943b018ae688808159c 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Joe &quot;Tiger King&quot; Burrow</div>
+                      <div class="description">Personal Project: Joe &quot;Tiger King&quot; Burrow</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/tyler-eifert-260-jersey-swap" data-context="pages" data-identity="id:p5eb5a1c2e5349c16c621fe90eb6823901019b0e53fc64cb9411d8" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c2e5349c16c621fe90eb6823901019b0e53fc64cb9411d8">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x32.png?h=3afab513fbd84cc18505a070ab2fa8c2"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1400.png?h=a75a62c74c042a112a13720bf851effc"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x640.png?h=46f2270e842de472b2e27d66e09fc5c4 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1280.png?h=eb86a63636beb4bb1feeed3e8ef142f2 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1366.png?h=e813f7b83baa558a95c6afa013a703ba 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1400.png?h=a75a62c74c042a112a13720bf851effc 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1400.png?h=a75a62c74c042a112a13720bf851effc 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b18fe57f-9143-43e8-8f6f-9551b3606261_rwc_0x0x1400x789x1400.png?h=a75a62c74c042a112a13720bf851effc 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Tyler Eifert &quot;260&quot; Jersey Swap.</div>
+                      <div class="description">Personal Project: Tyler Eifert Jersey swap for the Bishop Dwenger Grad. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/jalen-hurts-superhero-jersey-swap" data-context="pages" data-identity="id:p5eb5a1c29e78fa9d3d1a462bdb217eac530234da9d973a4344149" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c29e78fa9d3d1a462bdb217eac530234da9d973a4344149">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x32.png?h=54007466afc40270e29f1622f5182013"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_car_16x9.png?h=a90d814b2baa8f2f122f4fa9107942f8"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x640.png?h=fd430979240751138d7c6bcd5e3559e7 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x1280.png?h=6786e486f1be82e3dcfc2eb35fbda494 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x1366.png?h=1908b8b2df448aab2972a4f7397cf9a4 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x1920.png?h=dff343ccddce59b86122e0450270c2c8 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x2560.png?h=ac360d04244974aac44e0deec980aa30 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/d72fda1d-676e-4029-8376-4698711528ac_carw_16x9x5120.png?h=1c66961bd40784cdab41caa3cde4138e 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Jalen Hurts &quot;Superhero&quot; Jersey Swap.</div>
+                      <div class="description">Personal Project: One of my favorite players from this years draft Jalen Hurts overcame so much to get to where he is today and why i made a &quot;superhero&quot; edit for him because he overcame the odds. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/jonathan-taylor-spaceman-jersey-swap" data-context="pages" data-identity="id:p5eb5a1c238563f6d449ba05e66a1b99aacf9921f180b9d5b846f8" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c238563f6d449ba05e66a1b99aacf9921f180b9d5b846f8">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x32.png?h=40c7d7fb5a55620cfb423817daf5f2c8"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_car_16x9.png?h=c28a4a1851cb6f7516a23e6260a87e03"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x640.png?h=3f536bba76aa7605b0df56f1bf2a17e9 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x1280.png?h=5f0b98e7c139a09d8d92b245197bce72 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x1366.png?h=335c7a56439c465bfe92b4989d0857b5 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x1920.png?h=9ff9cdeafb5dd6620d0cc8f4fcac620d 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x2560.png?h=d489f1e5433c9d222bee7f1028e674f9 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f60aed71-9d41-4b69-aa3d-bf04515588cd_carw_16x9x5120.png?h=378eea8f153f9e984a632d595ed8afce 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Jonathan Taylor &quot;Spaceman&quot; Jersey Swap</div>
+                      <div class="description">Personal Project: Jonathan Taylor Colts Jersey Swap.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/alvin-kamara-kamara-poster" data-context="pages" data-identity="id:p5eb5a1c1e9703ff6c51fd179198f51c211df7a1b3b6907ef3f89d" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c1e9703ff6c51fd179198f51c211df7a1b3b6907ef3f89d">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x32.jpg?h=59c70ac0e360a83b0d12a38cdd06ae0f"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_car_16x9.jpg?h=498876683e17ed9a1773c5d600ae4a1b"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x640.jpg?h=952a8d202e3ec51d27cc1f78e2aa8759 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x1280.jpg?h=6488a5190bf8c47cbed2d867f1ada1ca 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x1366.jpg?h=668c6e34f77c0cc7ad397f4cb5d3b5d5 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x1920.jpg?h=49a6ea25fb1d6548211e8e7344778485 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x2560.jpg?h=9532567c3abfff51eccc37f440fb7692 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/14952363-11af-40cb-8309-36935478e5cd_carw_16x9x5120.jpg?h=0c26f6faff469aa6f6b670aea837aa34 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Alvin Kamara &quot;Kamara&quot; Poster.</div>
+                      <div class="description">Personal project: Alvin “Kamara” edit.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/michael-jordan-the-last-dance-poster" data-context="pages" data-identity="id:p5eb5a1c1bc452461c12ad3b5221372ba364ef113188a67530757b" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c1bc452461c12ad3b5221372ba364ef113188a67530757b">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x32.png?h=662ae7cd3086f7e21a1404ea5cbb97dd"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_car_16x9.png?h=571c14c54b82cdb39f1aa59498968ce6"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x640.png?h=ac7dc2c5edea3188c7d6bb5bf3000f89 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x1280.png?h=591e4a32f262523ceaf8dfd75cf3cbaf 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x1366.png?h=8e177fec10462a443733a16b3eb0f5dc 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x1920.png?h=b0dd6f3f12f298a571abc4b485bff63d 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x2560.png?h=06ac011eea3b4bb01d2342e2938b3473 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/be820805-1f79-4e93-9d5f-12103c4b9b4f_carw_16x9x5120.png?h=5d13f1ac2975bc861cc58a3c74b4a2d5 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Michael Jordan &quot;The Last Dance&quot; Poster</div>
+                      <div class="description"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/carroll-high-school-football-fort-wayne-re-brand" data-context="pages" data-identity="id:p5eb5a1c18ad133e3dad202370c380b8c974ad55d050230e4b3a74" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c18ad133e3dad202370c380b8c974ad55d050230e4b3a74">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x32.png?h=d8e8d3f104ed3be84eafeab5d3dbf579"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_car_16x9.png?h=8b3d67054da2b9803aacc6e07cc4343c"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x640.png?h=e00d5dbbe2de8a823761ea38f7102993 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x1280.png?h=0ecf0adfb89af69e4bdfb9dcdb15d638 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x1366.png?h=fbac496b9bbd00b8fc989dc21b2c63d7 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x1920.png?h=28cf24f170b3c8434b9d4094a7a47649 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x2560.png?h=8b6bc3282aae5296bf4033dffb06144b 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/147a7eaf-d821-46f7-a17e-4739c4a19f6e_carw_16x9x5120.png?h=1d9c150d9ed61b6fee8ece9fbd00a5e7 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Carroll High School Football (Fort Wayne) re-brand.</div>
+                      <div class="description">Project for Carroll high school (FW) for the football team.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-wallpaper-wednesday-412020" data-context="pages" data-identity="id:p5eb5a1c1180b74f5430efe7526a94f996a9770df0e13462247590" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c1180b74f5430efe7526a94f996a9770df0e13462247590">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x32.png?h=8878c20b509af945b25d47ed45bfbc5a"
+              data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_car_16x9.png?h=2bca0fd2036aff265da8e2e55916ddc8"
+              data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x640.png?h=39dfcefec24b15e9e004ceebdbfc8b4a 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x1280.png?h=4d10d65a7258e09a8f57427061490f22 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x1366.png?h=376d1b64a799a7646872685cc3265305 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x1920.png?h=096b394aa36370056ec108334bfb26e1 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x2560.png?h=1ee2088c19a3929c620c2db2e5f34c97 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/6bb02ac2-eab2-4c6b-824f-0a9a5ec1c5fd_carw_16x9x5120.png?h=ae0c7c03fbce9c96f4ab859606cfa2b5 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football Wallpaper Wednesday - 4/1/2020</div>
+                      <div class="description">USF Football Wallpaper Wednesday for social.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-wallpaper-wednesday-4820" data-context="pages" data-identity="id:p5eb5a1c0cc050b8d9b17edf49b6609e2c89c1dd914964671d1a6e" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c0cc050b8d9b17edf49b6609e2c89c1dd914964671d1a6e">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x32.png?h=8bb7b1d5b692ef60cb86c3d0082443d0"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_car_16x9.png?h=955b4f53e26f48140274af5f50a9a711"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x640.png?h=77933a54c9980bb6347c5715bc8fe259 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x1280.png?h=48abd0e3dc771944d72dc64486fd4183 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x1366.png?h=142532578836391c608f6d92e7c19b0e 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x1920.png?h=cab305a0e5e567dbabdf95edd52cf7dc 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x2560.png?h=d9f052f7d68ce4844ee3e3aa1c574087 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/9cf6db34-f147-4435-9048-fa4a2203b73d_carw_16x9x5120.png?h=a195c131c6acc5b359d3c44ede5c8684 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football Wallpaper Wednesday - 4/8/20</div>
+                      <div class="description">USF Football Wallpaper Wednesday edits made for a few people and team.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/lebron-the-king-poster" data-context="pages" data-identity="id:p5eb5a1c06b7b003844f1e8af359e71c7bbda62e69bdc7fef76a1b" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c06b7b003844f1e8af359e71c7bbda62e69bdc7fef76a1b">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x32.png?h=ffd0966f5ad9568866ceb7e3d5c270b8"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_car_16x9.png?h=7c4ab3f1c975504a2941e85d0b276f8d"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x640.png?h=833703fdd349179c42fef636541815e9 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x1280.png?h=a3be22b364553586f8790f9ea2f00415 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x1366.png?h=12319efc57843e1680b973bbdd5d1a4b 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x1920.png?h=895006409b5acdd6616aa8eff02f7697 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x2560.png?h=9daa4221616052bf8c74a72b80a5cae0 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b6b5a943-4f78-4014-bf4e-960296f1a371_carw_16x9x5120.png?h=cb43ee9260cd71b909f707a59870d757 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">LeBron &quot;The King&quot; Poster</div>
+                      <div class="description">Personal project: LeBron James &quot;The King&quot; pixel warp.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/naia-football-21" data-context="pages" data-identity="id:p5eb5a1c03122b05d3518bf86a45af92c17b3a8cd90df824bd5ce7" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1c03122b05d3518bf86a45af92c17b3a8cd90df824bd5ce7">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x32.png?h=5eec0e82575d5e99d22b2b88f565665a"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_car_16x9.png?h=44bc9675a7d5a64fe08087bf75dd128f"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x640.png?h=fc1c091d0b8798e5e6166749001ea704 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x1280.png?h=d9856cf29da795ad23d15ea91407f015 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x1366.png?h=8f8c659e7529eb2f9ee0c5b4fe94efb5 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x1920.png?h=ddea4409601ec955416fd8ad8a39fb5f 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x2560.png?h=0b82551aff617be5ef711ef268537d7c 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1bfdb1a2-1cf8-4416-8cc3-443a0d8d9e9f_carw_16x9x5120.png?h=892aed711e77a2fb27d72cfdf2a0371b 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">NAIA Football 21</div>
+                      <div class="description">USF Football fun, with putting some of our guys on the hopefully soon to be EA NAIA Football 21 Game. </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/emmanuel-sanders-new-orleans-saints-jersey-swap" data-context="pages" data-identity="id:p5eb5a1bfc9ee27d775c5fad75c89eef863f1af3ad5cbb8443e9d8" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bfc9ee27d775c5fad75c89eef863f1af3ad5cbb8443e9d8">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x32.png?h=aab82b68bb11b9f81bfa96a3dd1e0218"
+              data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_car_16x9.png?h=9b4e69f0f271dd34fa18115cd4e9cfc6"
+              data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x640.png?h=447fe88f6550456c35b65e8a7b1d7b23 640w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x1280.png?h=391dd8acc934f89a5e66acc1760c3a22 1280w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x1366.png?h=6ce5185525619aa7cc2127268cfabb65 1366w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x1920.png?h=b8a4a8e9a0b6c525e04c987b3f4222db 1920w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x2560.png?h=b6f847b855b1ac7f4991ca108fcf5496 2560w, https://pro2-bar-s3-cdn-cf2.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/37d81084-6eb5-4e08-a3af-4ddd8e172946_carw_16x9x5120.png?h=054c61b0b739f23f1c0a9e1982641e53 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Emmanuel Sanders New Orleans Saints Jersey Swap</div>
+                      <div class="description">Emmanuel Sanders New Orleans Saints Jersey Swap (Personal)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/naia-football-19-usf" data-context="pages" data-identity="id:p5eb5a1bf88177d951f2c9d9ac09b81ef76a4af38b9a27b8697bde" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bf88177d951f2c9d9ac09b81ef76a4af38b9a27b8697bde">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x32.png?h=4e21b0901e5969d3fc07af6ade310e43"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_car_16x9.png?h=1fcfd11c8789d9c2453e70640bb54677"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x640.png?h=de06123376fe23725a53a5452b1d527e 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x1280.png?h=40e653d4d17b643f1b61ff57b48ba43e 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x1366.png?h=bb064ef6e6adee8fde770206bd366f97 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x1920.png?h=8fd2908931d66e15fe280593dcb1ca74 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x2560.png?h=de5985950fcf8671efa965be533eda8a 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/8082f222-739c-408a-8e36-0fbd529b010c_carw_16x9x5120.png?h=9a931afb164ec3cb50987f88a3dfafd0 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">NAIA Football 19 - USF</div>
+                      <div class="description">An edit from a year ago that i made for fun. It is a remake of the EA NCAA Football games but for the University of Saint Francis (NAIA).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/cougs-will-roll-covid-19-announcement" data-context="pages" data-identity="id:p5eb5a1bf5267edd9ba2ff741e157109d759193c1f875356db682a" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bf5267edd9ba2ff741e157109d759193c1f875356db682a">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x32.jpg?h=442949015485380b188f66cab4dc06e3"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_car_16x9.jpg?h=082133ce68f781fc457a50cdea614811"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x640.jpg?h=f25940af3fada93d3346d8b3817944c1 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x1280.jpg?h=d0938a42530f0a16f86979caa2db3ab1 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x1366.jpg?h=b90e5cd64dd5d4e13eef8101b962d0d1 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x1920.jpg?h=025b16e68fd61a085d3e8080b8ec7b10 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x2560.jpg?h=291757ff07be005de53079c9fa4d6bbf 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/864c4dd7-5c27-4e30-88f9-7759821132eb_carw_16x9x5120.jpg?h=272cf2d9a303005485f878a2d834eeb1 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Cougs Will Roll (COVID- 19 Announcement)</div>
+                      <div class="description"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-eternal-atake-edit" data-context="pages" data-identity="id:p5eb5a1bf0ee7e674172b06980b21a2ad87dfe1f12745d18abbee6" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bf0ee7e674172b06980b21a2ad87dfe1f12745d18abbee6">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x32.png?h=378d682fa911ef5fc6d7f9a3dfb71dc1"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_car_16x9.png?h=6bbf37fd4f776e471e9c4f7766e7216f"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x640.png?h=26cf18cf735516e402e7b4d99673ab40 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x1280.png?h=054c48dbad973eb3a5c7a8a77d3c2d78 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x1366.png?h=5481c34b9711e60fe24bb1c5007f81ce 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x1920.png?h=2e604569930995b3f68933e8355aed5a 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x2560.png?h=72ea1617900cfa4ed68783e79f269319 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/11d8d972-6c3b-45ac-b23e-46252a571eda_carw_16x9x5120.png?h=d70b1475c5bed754278207e826926135 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Eternal Atake Edit.</div>
+                      <div class="description">A little fun edit to celebrate winter weights being finished for the University of Saint Francis Football team and Lil Uzi Vert dropping Eternal Atake.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-senior-bio-idea" data-context="pages" data-identity="id:p5eb5a1becbe665e871a925992036300f8574a3673bf33abf37ef4" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1becbe665e871a925992036300f8574a3673bf33abf37ef4">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x32.png?h=80e0b909d754181331137ddf272ef748"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_car_16x9.png?h=f1f0b8165d3cf8e07e87b63cc3bcfd77"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x640.png?h=823a5d6dab0e7407cdcd3c78a017b53c 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x1280.png?h=1f0c498aa9d7f6f54c1ed368b3a1c1ea 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x1366.png?h=1ef1cbd644b70840df9fc8aff7d74438 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x1920.png?h=66f41db2d4f7004aef4e6d504548e3c2 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x2560.png?h=cc6669252daa565b858a94a860a7d4c3 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/82c7abee-3126-4719-89b0-e58431ec18b3_carw_16x9x5120.png?h=5e5b7364ea7068127d857efccd0aa90f 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football Senior Bio Idea.</div>
+                      <div class="description">An idea for senior bios for the University of Saint Francis Football Team.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-football-spring-ball-projects" data-context="pages" data-identity="id:p5eb5a1be836d95ec876ad7c814fcc759bb1b54cb97cb7aae29e67" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1be836d95ec876ad7c814fcc759bb1b54cb97cb7aae29e67">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x32.png?h=35b8a4dbb182503c30f9721b30963c1a"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_car_16x9.png?h=162acae4e3feb60f9f9cb3a2493d1f89"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x640.png?h=bd41938f653241ab33fb9a1a70583be6 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x1280.png?h=3ba5eaec444e09d0b9f195296a70256b 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x1366.png?h=fbe7af42f82f3ac0d06ed7f682206160 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x1920.png?h=b452405e8d423bc43f9adb7d8773b9a0 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x2560.png?h=b5058f0c064c07ab2ffc13f7a967a5d1 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/b78e5c1e-1017-4eb0-8416-0408f3004931_carw_16x9x5120.png?h=50fe7304fe7a097f4785bb7b295a5c96 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Football spring ball projects.</div>
+                      <div class="description">Some work i did for the University of Saint Francis Football team for spring ball.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/university-of-saint-francis-2019-season-collection" data-context="pages" data-identity="id:p5eb5a1be108aea734511b0399ef38f2b97927596d66d5bcfe520a" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1be108aea734511b0399ef38f2b97927596d66d5bcfe520a">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x32.jpg?h=1648bad1d8ad1b81cd962eab5f16c4a5"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_car_16x9.jpg?h=6a8ca6fae56c7d405426af7a858ec16a"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x640.jpg?h=a3158f4b7df6c6295a091e932cfc0791 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x1280.jpg?h=15df00bea7cd7a320bf137d6d4c89715 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x1366.jpg?h=285711f29ff6aa278c7e6d305a884d04 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x1920.jpg?h=e56e1be53b8cb3ef28955ce06d1b41ea 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x2560.jpg?h=bedc88db0662c65484a235df5f539e34 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f82bad96-1ff5-4a9b-8992-b9d0469b10db_carw_16x9x5120.jpg?h=a5c536739c36c4c53dae60d6c2e8c36b 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">University of Saint Francis - 2019 Season Collection.</div>
+                      <div class="description">A collection of all the 2019 edits i made during the year that didnt make a category (or i was to lazy to make another project lol.)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/coach-donley-tribute" data-context="pages" data-identity="id:p5eb5a1bd2a156f58de7e2904408bf77e0fd44ffc8aadb8aacf318" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bd2a156f58de7e2904408bf77e0fd44ffc8aadb8aacf318">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x32.png?h=4192f2e628071b471d2e5ad43face4e3"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_car_16x9.png?h=ea62d37d9de7074ae35046673e172981"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x640.png?h=4f7ca97a16bc9390991a535fbfbf2649 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x1280.png?h=2008625a0bdbcbfb15b40e7b1c66bbd4 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x1366.png?h=bec25392cdb33ba4334b69314cc99232 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x1920.png?h=3e4dbf53014c464f96edf1fa8a7e080f 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x2560.png?h=c5e8ca2fb94e4921450021676da7bf63 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/a37dfe1c-1a09-4491-bbbf-0314c053e3e5_carw_16x9x5120.png?h=bf901e5f07286d66b7eb225aa8d1c32a 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Coach Donley Tribute</div>
+                      <div class="description">A tribute for the 7th most winning-est coach of all time (at the time of making this). This was before i was a social media assistant.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-jersey-swaps" data-context="pages" data-identity="id:p5eb5a1bcc2ff1fbdb27f7e397908b5ddae7c03ebd41d3925b1954" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bcc2ff1fbdb27f7e397908b5ddae7c03ebd41d3925b1954">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x32.png?h=297aafd9b218e1349dd10e69ec2823bf"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_car_16x9.png?h=3f0bf1153f183b709ef249bd5d28595a"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x640.png?h=c0063526afaef3935483d6702f441f17 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x1280.png?h=61b81dc94034c0a9a4eda55c675935d2 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x1366.png?h=96a8e235d206db9df4a92a1a3247219f 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x1920.png?h=aaffe193a173badff338b30a6beb3ecc 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x2560.png?h=22c5eae7b8b357e8ac5a4e0f30ac3820 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/0db65a16-8584-4bb6-b6c5-09411b0065ec_carw_16x9x5120.png?h=2b50ed1bb02a49eb991618811a951875 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Jersey Swaps</div>
+                      <div class="description">Made these jersey swaps for some of the guys in my class before i was officially a social media assistant.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/usf-recruit-badge" data-context="pages" data-identity="id:p5eb5a1bc09dbb13297a71cfb40ab6f6a9204edc0fc04cc84b10cf" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bc09dbb13297a71cfb40ab6f6a9204edc0fc04cc84b10cf">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x32.jpg?h=0df5528ea122ea7957c96456f3c0b908"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_car_16x9.jpg?h=1990e951dab315bed460196e9ff43a38"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x640.jpg?h=d8d84280216c4df6b590c9572ffcae8e 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x1280.jpg?h=b97093c4765914120546eea7b5350b89 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x1366.jpg?h=3cd3d029115e0bbd181a08e08d622027 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x1920.jpg?h=0bc5e71f955f2c70a88de0e177594c58 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x2560.jpg?h=d3475b90ca2ba4ac2ef2a16130292f94 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/f9cdf6fb-635d-496e-90bc-f143170838fc_carw_16x9x5120.jpg?h=f91dd3e9ded352339fc614a68b1cce8c 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">USF Recruit Badge</div>
+                      <div class="description">Badge to give to recruits for sideline access.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/camps-usf-flyer" data-context="pages" data-identity="id:p5eb5a1bbd3617d3137a3a738cbffd1405558ec3c735bad9578015" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bbd3617d3137a3a738cbffd1405558ec3c735bad9578015">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x32.jpg?h=87ce960eb44ac57ac1ded6192d8dd277"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_car_16x9.jpg?h=00edba124fa940aabc7f9190a9cc932d"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x640.jpg?h=99067df26f4afc69059fb7ff3dc48c94 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x1280.jpg?h=34f7ae9bfb3be39c29becd7c1f9a7465 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x1366.jpg?h=828bd185061738e5bb545bed08c6ad9f 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x1920.jpg?h=5a618f04c37d9bf023f78afe8b5a3222 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x2560.jpg?h=c74b14d85e617a210db2428fabe76b8a 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/53ae7d05-2839-4bc3-a226-2e602da8dc2b_carw_16x9x5120.jpg?h=6256d4d08caceaf28b1d14b7c89c5228 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Camps USF Flyer</div>
+                      <div class="description">Poster for camps coming up for University of Saint Francis (IN).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/james-jamicich-edits" data-context="pages" data-identity="id:p5eb5a1bba290842248627ce63b7eefc8831adb813bd6a1a3c3a73" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bba290842248627ce63b7eefc8831adb813bd6a1a3c3a73">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x32.jpg?h=12ed5d4d05042f485868b38c64ff43ec"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_car_16x9.jpg?h=4f209c947d9df6a39a731ee8bd8f11e9"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x640.jpg?h=ec9f938c6d0455d776d262981f96b8c6 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x1280.jpg?h=f380eb5cba2521cd28eb9b26830dfdec 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x1366.jpg?h=df8b4ef29efabdb430d3ebee956fbdba 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x1920.jpg?h=16b6870f09ea5f7b45cd1c0c5554fba8 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x2560.jpg?h=eb23259645a64ce2ade6aa8239d3ec7e 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/5b7795ed-3eba-4898-82b8-a15ae946bd91_carw_16x9x5120.jpg?h=d78f8fe17dffa3ef9ed147f1e0a262ee 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">James Jamicich Edits</div>
+                      <div class="description">James Jamicich defensive lineman for University of Saint Francis (IN).</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/2020-usf-football-schedule" data-context="pages" data-identity="id:p5eb5a1bb650caf329eb165e5989520f32ca907621ec8b46a5a5c2" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bb650caf329eb165e5989520f32ca907621ec8b46a5a5c2">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x32.jpg?h=dee07882d7e440d41e26692779874452"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_car_16x9.jpg?h=9a163366dbf2ce15901c9bde9a219f7c"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x640.jpg?h=5b07d828b2291e3dda02f8c754c7746f 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x1280.jpg?h=f625b8d298e7698377290bc2b59506f0 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x1366.jpg?h=92823f00996f439a12243616722f2974 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x1920.jpg?h=c25d5fae828b8af83efb7dd8482be506 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x2560.jpg?h=4bf13f57355653eb5f9a64c1af0d14ec 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/98fecb25-652b-4540-829d-842debfd6d6d_carw_16x9x5120.jpg?h=983c839d99ece1e46c14dd5f02ccc5ba 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">2020 USF Football Schedule</div>
+                      <div class="description">2020 Football Schedule - University of Saint Francis (NAIA)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/all-msfa-university-of-saint-francis-naia" data-context="pages" data-identity="id:p5eb5a1bb03e4632e2485c54b8457f9931463d9720b2d9f46c5aa3" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1bb03e4632e2485c54b8457f9931463d9720b2d9f46c5aa3">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x32.png?h=6c06e2b991d97793d2c770502ef9ce6b"
+              data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_car_16x9.png?h=92843aad5c150c9032f3de785c790289"
+              data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x640.png?h=6f93e874bf6e9cbe30a52996e2f59086 640w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x1280.png?h=54b81a1398f4a38e3334280255f6e10c 1280w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x1366.png?h=ce72820850f5f7883e8454a022df1803 1366w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x1920.png?h=ab600c75f51151ce81976773c02883f7 1920w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x2560.png?h=543b1b968ed697d6fdf8efcccbce45ac 2560w, https://pro2-bar-s3-cdn-cf5.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/67dc29b1-0536-4069-b9b2-89608f11c705_carw_16x9x5120.png?h=9f8b0bfa2c27e08c5d2027573350d3ac 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">All MSFA - University of Saint Francis (NAIA)</div>
+                      <div class="description">All MSFA players from the University of Saint Francis Football Team (NAIA) - College Football</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/nsd-2020-university-of-saint-francis-naia" data-context="pages" data-identity="id:p5eb5a1b9c8e8d2399fc233bd6609cce0602ff528f495ccd510706" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1b9c8e8d2399fc233bd6609cce0602ff528f495ccd510706">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x32.png?h=2972fea1cedf64b22c8ec72da2bd2d13"
+              data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_car_16x9.png?h=200458b9c8fc5ded854ec4156d81092d"
+              data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x640.png?h=6ab93dbd279b9798c190d7557ed0f5c4 640w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x1280.png?h=2b4e062e4631d9108eb28eff58b34fe7 1280w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x1366.png?h=1140fda92eb596376635e61399f3d34a 1366w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x1920.png?h=0fcb667e0cb0113abab90f5f5a0d7d9b 1920w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x2560.png?h=c183caab0d8d03d0c6b911c2aee5f2cd 2560w, https://pro2-bar-s3-cdn-cf6.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/aee9f656-30fe-4975-9cd7-73f1375dd050_carw_16x9x5120.png?h=2a2c370ddb4bde41153b5743ccf925ab 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">NSD 2020 - University of Saint Francis (NAIA)</div>
+                      <div class="description">First year as a Social Media Assistant for the University of Saint Francis (Fort Wayne,Indiana)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="project-cover js-project-cover-touch hold-space" href="/personal-work-committed-edits" data-context="pages" data-identity="id:p5eb5a1b89f409d322f6ccd22a4e56c5b36b24ab7ef3fa85647e5c" data-hover-hint="galleryPageCover" data-hover-hint-id="p5eb5a1b89f409d322f6ccd22a4e56c5b36b24ab7ef3fa85647e5c">
+            <div class="cover-content-container">
+              <div class="cover-image-wrap">
+                <div class="cover-image">
+                    <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x32.jpg?h=fc486d57345eb4d3e80021c57039d48b"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_car_16x9.jpg?h=b4345de4ae6d9155f50412dfb424fcd9"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x640.jpg?h=690b7a2f852332c8d303e74649079679 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x1280.jpg?h=760e1fd471c4ee55102ac3f9127532b3 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x1366.jpg?h=4d89127f03868c5e4a751a56418f2e90 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x1920.jpg?h=d89c51c477b64ed8757cc9d2ab790987 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x2560.jpg?h=ef63a4f5658e6b74a6c3185c6eb40e66 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/c6bc6d8f-7bb2-4386-acba-142c2ebbb27e/1a90ec4d-aa9d-4842-b80c-c665d120a342_carw_16x9x5120.jpg?h=f1e607e275394ab6b4f93a0447e02420 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, calc(100vw / 4)"
+            >
+                              </div>
+                </div>
+              </div>
+              <div class="details-wrap">
+                <div class="details">
+                  <div class="details-inner">
+                      <div class="title preserve-whitespace">Personal Work (Committed Edits)</div>
+                      <div class="description"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          </section>
+              <section class="back-to-top" data-hover-hint="backToTop">
+                <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+              </section>
+              <a class="back-to-top-fixed js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+                <g>
+                  <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+                    c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+                    c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+                    c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+                    c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+                    c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+                    c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+                </g>
+                </svg>
+              </a>
+              <footer class="site-footer" data-hover-hint="footer">
+                  <div class="social pf-footer-social" data-context="theme.footer" data-hover-hint="footerSocialIcons">
+                    <ul>
+                            <li>
+                              <a href="http://twitter.com/the_maque" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M24.71 5.89C24 6.2 23.2 6.4 22.4 6.53c0.82-0.5 1.45-1.29 1.75-2.23c-0.77 0.46-1.62 0.8-2.53 1 C20.92 4.5 19.9 4 18.7 4c-2.2 0-3.99 1.81-3.99 4.04c0 0.3 0 0.6 0.1 0.92C11.54 8.8 8.6 7.2 6.6 4.7 C6.3 5.3 6.1 6 6.1 6.77c0 1.4 0.7 2.6 1.8 3.36c-0.65-0.02-1.27-0.2-1.81-0.51c0 0 0 0 0 0.1 c0 2 1.4 3.6 3.2 3.96c-0.34 0.09-0.69 0.14-1.05 0.14c-0.26 0-0.51-0.03-0.75-0.07c0.51 1.6 2 2.8 3.7 2.8 c-1.36 1.08-3.08 1.73-4.95 1.73c-0.32 0-0.64-0.02-0.95-0.06C7.05 19.3 9.1 20 11.4 20c7.33 0 11.34-6.15 11.34-11.49 c0-0.18 0-0.35-0.01-0.52C23.5 7.4 24.2 6.7 24.7 5.89z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://behance.net/themaque" target="_blank">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon"><path id="path-1" d="M18.83,14.38a2.78,2.78,0,0,0,.65,1.9,2.31,2.31,0,0,0,1.7.59,2.31,2.31,0,0,0,1.38-.41,1.79,1.79,0,0,0,.71-0.87h2.31a4.48,4.48,0,0,1-1.71,2.53,5,5,0,0,1-2.78.76,5.53,5.53,0,0,1-2-.37,4.34,4.34,0,0,1-1.55-1,4.77,4.77,0,0,1-1-1.63,6.29,6.29,0,0,1,0-4.13,4.83,4.83,0,0,1,1-1.64A4.64,4.64,0,0,1,19.09,9a4.86,4.86,0,0,1,2-.4A4.5,4.5,0,0,1,23.21,9a4.36,4.36,0,0,1,1.5,1.3,5.39,5.39,0,0,1,.84,1.86,7,7,0,0,1,.18,2.18h-6.9Zm3.67-3.24A1.94,1.94,0,0,0,21,10.6a2.26,2.26,0,0,0-1,.22,2,2,0,0,0-.66.54,1.94,1.94,0,0,0-.35.69,3.47,3.47,0,0,0-.12.65h4.29A2.75,2.75,0,0,0,22.5,11.14ZM18.29,6h5.36V7.35H18.29V6ZM13.89,17.7a4.4,4.4,0,0,1-1.51.7,6.44,6.44,0,0,1-1.73.22H4.24V5.12h6.24a7.7,7.7,0,0,1,1.73.17,3.67,3.67,0,0,1,1.33.56,2.6,2.6,0,0,1,.86,1,3.74,3.74,0,0,1,.3,1.58,3,3,0,0,1-.46,1.7,3.33,3.33,0,0,1-1.35,1.12,3.19,3.19,0,0,1,1.82,1.26,3.79,3.79,0,0,1,.59,2.17,3.79,3.79,0,0,1-.39,1.77A3.24,3.24,0,0,1,13.89,17.7ZM11.72,8.19a1.25,1.25,0,0,0-.45-0.47,1.88,1.88,0,0,0-.64-0.24,5.5,5.5,0,0,0-.76-0.05H7.16v3.16h3a2,2,0,0,0,1.28-.38A1.43,1.43,0,0,0,11.89,9,1.73,1.73,0,0,0,11.72,8.19ZM11.84,13a2.39,2.39,0,0,0-1.52-.45H7.16v3.73h3.11a3.61,3.61,0,0,0,.82-0.09A2,2,0,0,0,11.77,16a1.39,1.39,0,0,0,.47-0.54,1.85,1.85,0,0,0,.17-0.88A1.77,1.77,0,0,0,11.84,13Z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://www.linkedin.com/in/reginald-telemaque-96354b1a0/" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <path id="path-1_24_" d="M19.6,19v-5.8c0-1.4-0.5-2.4-1.7-2.4c-1,0-1.5,0.7-1.8,1.3C16,12.3,16,12.6,16,13v6h-3.4
+                                  c0,0,0.1-9.8,0-10.8H16v1.5c0,0,0,0,0,0h0v0C16.4,9,17.2,7.9,19,7.9c2.3,0,4,1.5,4,4.9V19H19.6z M8.9,6.7L8.9,6.7
+                                  C7.7,6.7,7,5.9,7,4.9C7,3.8,7.8,3,8.9,3s1.9,0.8,1.9,1.9C10.9,5.9,10.1,6.7,8.9,6.7z M10.6,19H7.2V8.2h3.4V19z"/>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://www.facebook.com/reginald.telemaque" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M16.21 20h-3.26v-8h-1.63V9.24h1.63V7.59c0-2.25 0.92-3.59 3.53-3.59h2.17v2.76H17.3 c-1.02 0-1.08 0.39-1.08 1.11l0 1.38h2.46L18.38 12h-2.17V20z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://instagram.com/themaque" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <g>
+                                  <path d="M15,5.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+                                    c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+                                    c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+                                    c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+                                    c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,5.4,12.9,5.4,15,5.4 M15,4c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+                                    c-0.5,0.2-1,0.5-1.4,0.9C7.9,5.8,7.6,6.2,7.4,6.8C7.2,7.3,7.1,7.9,7,8.7C7,9.6,7,9.8,7,12s0,2.4,0,3.3c0,0.9,0.2,1.4,0.4,1.9
+                                    c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0c0.9,0,1.4-0.2,1.9-0.4
+                                    c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3c0-0.9-0.2-1.4-0.4-1.9
+                                    c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,4,17.2,4,15,4L15,4L15,4z"/>
+                                  <path d="M15,7.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,7.9,15,7.9L15,7.9z M15,14.7c-1.5,0-2.7-1.2-2.7-2.7
+                                    c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7C17.7,13.5,16.5,14.7,15,14.7L15,14.7z"/>
+                                  <path d="M20.2,7.7c0,0.5-0.4,1-1,1s-1-0.4-1-1s0.4-1,1-1S20.2,7.2,20.2,7.7L20.2,7.7z"/>
+                                </g>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://tiktok.com/@themaque" target="_blank">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                	 viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <path d="M22,10.4c-0.1,0-0.3,0-0.4,0c-1.5,0-2.9-0.7-3.7-2v6.8c0,2.8-2.2,5-5,5s-5-2.2-5-5s2.2-5,5-5l0,0c0.1,0,0.2,0,0.3,0v2.5
+                                	c-0.1,0-0.2,0-0.3,0c-1.4,0-2.5,1.1-2.5,2.5c0,1.4,1.1,2.5,2.5,2.5c1.4,0,2.7-1.1,2.7-2.5l0-11.5H18c0.2,2.1,1.9,3.8,4,3.9L22,10.4"
+                                	/>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://youtube.com/themaque" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 30 24" xml:space="preserve" class="icon"><path d="M26.15 16.54c0 0-0.22 1.57-0.9 2.26c-0.87 0.91-1.84 0.91-2.28 0.96C19.78 20 15 20 15 20 s-5.91-0.05-7.74-0.23c-0.51-0.09-1.64-0.07-2.51-0.97c-0.68-0.69-0.91-2.26-0.91-2.26s-0.23-1.84-0.23-3.68v-1.73 c0-1.84 0.23-3.68 0.23-3.68s0.22-1.57 0.91-2.26c0.87-0.91 1.83-0.91 2.28-0.96C10.22 4 15 4 15 4H15c0 0 4.8 0 8 0.2 c0.44 0.1 1.4 0.1 2.3 0.96c0.68 0.7 0.9 2.3 0.9 2.26s0.23 1.8 0.2 3.68v1.73C26.38 14.7 26.1 16.5 26.1 16.54z M12.65 8.56l0 6.39l6.15-3.18L12.65 8.56z"/></svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://github.com/TheMaque" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <g>
+                                  <path class="st0" d="M15,4c-4.5,0-8.2,3.7-8.2,8.2c0,3.6,2.4,6.7,5.6,7.8c0.4,0.1,0.6-0.2,0.6-0.4c0-0.2,0-0.8,0-1.5
+                                    c-2.3,0.5-2.8-1-2.8-1c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5c0.8,0.1,1.3,0.8,1.3,0.8c0.7,1.3,1.9,0.9,2.4,0.7
+                                    c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.7-0.9-3.7-4.1c0-0.9,0.3-1.6,0.8-2.2c-0.1-0.2-0.4-1,0.1-2.2c0,0,0.7-0.2,2.3,0.8
+                                    C13.6,8.1,14.3,8,15,8c0.7,0,1.4,0.1,2.1,0.3c1.6-1.1,2.3-0.8,2.3-0.8c0.4,1.1,0.2,2,0.1,2.2c0.5,0.6,0.8,1.3,0.8,2.2
+                                    c0,3.2-1.9,3.8-3.7,4c0.3,0.3,0.6,0.8,0.6,1.5c0,1.1,0,2,0,2.3c0,0.2,0.1,0.5,0.6,0.4c3.3-1.1,5.6-4.2,5.6-7.8
+                                    C23.2,7.7,19.5,4,15,4z"/>
+                                  <path class="st1" d="M9.9,15.8c0,0-0.1,0.1-0.1,0c-0.1,0-0.1-0.1-0.1-0.1c0,0,0.1-0.1,0.1,0C9.9,15.7,9.9,15.7,9.9,15.8L9.9,15.8z
+                                     M9.8,15.7"/>
+                                  <path class="st1" d="M10.2,16.1c0,0-0.1,0-0.2,0C10,16.1,10,16,10,15.9c0,0,0.1,0,0.2,0C10.3,16,10.3,16.1,10.2,16.1L10.2,16.1z
+                                     M10.2,16.1"/>
+                                  <path class="st1" d="M10.6,16.6c-0.1,0-0.1,0-0.2-0.1c-0.1-0.1-0.1-0.2,0-0.2c0.1,0,0.1,0,0.2,0.1C10.6,16.5,10.6,16.6,10.6,16.6
+                                    L10.6,16.6z M10.6,16.6"/>
+                                  <path class="st1" d="M11,17.1c0,0-0.1,0-0.2,0c-0.1-0.1-0.1-0.2,0-0.2c0,0,0.1,0,0.2,0C11,16.9,11.1,17,11,17.1L11,17.1z M11,17.1"
+                                    />
+                                  <path class="st1" d="M11.6,17.3c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.1-0.2c0-0.1,0.1-0.1,0.2-0.1
+                                    C11.6,17.2,11.6,17.3,11.6,17.3L11.6,17.3z M11.6,17.3"/>
+                                  <path class="st1" d="M12.3,17.4c0,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.2-0.1c0-0.1,0.1-0.1,0.2-0.1
+                                    C12.2,17.3,12.3,17.3,12.3,17.4L12.3,17.4z M12.3,17.4"/>
+                                  <path class="st1" d="M12.9,17.3c0,0.1-0.1,0.1-0.2,0.2c-0.1,0-0.2,0-0.2-0.1c0-0.1,0.1-0.1,0.2-0.2C12.8,17.2,12.9,17.2,12.9,17.3
+                                    L12.9,17.3z M12.9,17.3"/>
+                                </g>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="http://soundcloud.com/themaque" target="_blank">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                <path d="M3.1,13.1L3.1,13.1l-0.3,1.5L3,15.9c0,0,0,0.1,0.1,0.1c0,0,0.1,0,0.1-0.1l0,0l0,0l0,0l0.3-1.4L3.1,13.1
+                                  C3.3,13.1,3.3,13.1,3.1,13.1z M4.2,12.2C4.2,12.2,4.1,12.1,4.2,12.2c-0.1-0.1-0.1,0-0.1,0l-0.3,2.2l0.3,2.2c0,0,0,0.1,0.1,0.1
+                                  c0,0,0.1,0,0.1-0.1l0.3-2.2L4.2,12.2z M7.9,10.3c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4L7.8,17c0,0.1,0.1,0.1,0.1,0.1C8,17.1,8,17,8,17l0,0
+                                  l0.3-2.6l-0.1-4C8,10.3,8,10.3,7.9,10.3z M6,11.7c-0.1,0-0.1,0-0.1,0.1l-0.3,2.6L5.9,17c0,0.1,0,0.1,0.1,0.1c0.1,0,0.1,0,0.1-0.1
+                                  l0.3-2.6l-0.3-2.6C6.1,11.7,6.1,11.7,6,11.7z M10,17.1c0.1,0,0.3-0.1,0.3-0.3l0.1-2.6L10.2,9c0-0.1-0.1-0.3-0.3-0.3
+                                  C9.8,8.7,9.7,8.8,9.7,9l-0.1,5.3l0.1,2.6C9.7,17.1,9.8,17.1,10,17.1z M13.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0l0,0l0.1-2.5l-0.1-6.1
+                                  C14.2,8.1,14,8,13.9,8c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.1l0.1,2.5C13.6,17,13.8,17.1,13.9,17.1z M11.9,17.1c0.1,0,0.3-0.1,0.3-0.3l0,0
+                                  l0.1-2.5l-0.1-5.3c0-0.1-0.1-0.3-0.3-0.3S11.6,9,11.6,9.1l-0.1,5.3l0.1,2.5C11.6,17,11.7,17.1,11.9,17.1z M7,17.1
+                                  c0.1,0,0.1-0.1,0.1-0.1l0.3-2.6L7.1,12c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0-0.1,0.1l-0.1,2.5L6.8,17C6.8,17.1,6.8,17.1,7,17.1z
+                                   M5,17C5,17,5.2,17,5,17l0.4-2.6l-0.3-2.6c0-0.1,0-0.1-0.1-0.1c0,0-0.1,0-0.1,0.1l-0.3,2.6L5,17C4.9,17,5,17,5,17z M13,9
+                                  c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.2l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-5.2C13.2,9.1,13.1,9,13,9z
+                                   M8.9,17.1C9,17.1,9,17,9,17l0.1-2.6L9,9.5c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.1,0.1-0.1,0.1l-0.1,4.9L8.7,17
+                                  C8.7,17.1,8.9,17.1,8.9,17.1z M11.2,17L11.2,17l0.1-2.5l-0.1-5.5c0-0.1-0.1-0.3-0.3-0.3c-0.1,0-0.3,0.1-0.3,0.3l-0.1,5.5l0.1,2.5
+                                  c0,0.1,0.1,0.3,0.3,0.3C11,17.1,11.2,17.1,11.2,17L11.2,17z M24.1,11.3c-0.4,0-0.8,0.1-1.1,0.3c-0.3-2.7-2.5-4.8-5.2-4.8
+                                  c-0.7,0-1.4,0.1-1.9,0.4c-0.3,0.1-0.3,0.1-0.3,0.4V17c0,0.1,0.1,0.3,0.3,0.4h8.2c1.6,0,3-1.4,3-3C27.1,12.6,25.8,11.3,24.1,11.3z
+                                   M15,7.5c-0.1,0-0.3,0.1-0.3,0.3l-0.1,6.7l0.1,2.5c0,0.1,0.1,0.3,0.3,0.3c0.1,0,0.3-0.1,0.3-0.3l0,0l0.1-2.5l-0.1-6.7
+                                  C15.3,7.6,15.1,7.5,15,7.5z"/>
+                                </svg>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="mailto:reggiemaque@gmail.com">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 24" style="enable-background:new 0 0 30 24;" xml:space="preserve" class="icon">
+                                  <g>
+                                    <path d="M15,13L7.1,7.1c0-0.5,0.4-1,1-1h13.8c0.5,0,1,0.4,1,1L15,13z M15,14.8l7.9-5.9v8.1c0,0.5-0.4,1-1,1H8.1c-0.5,0-1-0.4-1-1 V8.8L15,14.8z"/>
+                                  </g>
+                                </svg>
+                              </a>
+                            </li>
+                    </ul>
+                  </div>
+                <div class="footer-text">
+                  Computer Science Major at the University of Saint Francis  | Football Player | Graphic Design Artist | Tech Enthusiast | Contact for Freelance Inquiries
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":29,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5eb5a1b45fcc1b936cf5bef7c480560406780ac41ceab6572d046","theme":{"name":"marta\/ludwig"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false},"googleAnalytics":{"trackingCode":"UA-167852738-1","anonymization":false}};</script>
+  <script type="text/javascript" src="/site/translations?cb="></script>
+  <script type="text/javascript" src="/dist/js/main.js?cb="></script>
+</html>
