@@ -1,37 +1,60 @@
-<title>Midterm: Reggie's World - Contact</title>
+
 
 
 <!DOCTYPE html>
 <html>
+
+<title>Midterm: Reggie's World - Contact</title>
+
 <style>
     
-.contentDiv {
+.contentDiv
+ {
     border: 5px outset black;
-                background-color: white;
-                text-align: center;
-                background-image: url('Images/web\ back.png') ;
+    background-color: white;
+    text-align: center;
+    background-image: url('Images/web\ back.png');
+    padding: 150px;
+    
 
 }
 
-li {
+li
+ {
     display: inline;
     padding: 10px;
     position: relative;
 }
 
-.topNav {
-list-style-type: none;
-  text-align: right;
-  font-size: 20px;
-  color: white;
-  padding: 25px;
-  margin-top: 0px;
+.topNav
+ {
+    list-style-type: none;
+    text-align: right;
+    font-size: 20px;
+    color: white;
+    padding: 25px;
+    margin-top: 0px;
  
 }
 
 .navlogo {
     display: block;
+    border-radius: 50px;
+    border-color: black;
+    box-sizing: border-box;
   
+}
+
+.contactIMG
+{
+    border-radius: 150px;
+    border-color:white;
+    box-sizing: border-box;
+    width:  300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 form {
@@ -39,6 +62,8 @@ form {
  padding: 25px;
  background-color: rgb(119, 119, 119);
 font-style: italic;
+border-radius: 25px;
+
 }
 
 
@@ -72,15 +97,22 @@ font-style: italic;
 
 <h1>Contact Reggie!</h1>
 
-<img src="Images\Circle Reggie.png" alt="" style= "width: 250px" style="height: 200px" style="border-style: solid ;">
+<img src="Images\Circle Reggie.png" alt="" class = "contactIMG";>
   
 <form action="mailto:reggiemaque@gmail.com" method="POST" name="emailForm">
-    <label for="name"><b>Name:</b></label>
-    <input type="text" size="contactName" id="contactName" placeholder="YOUR NAME......"><br><br>
-    <label for="contactComment"><b>Message:</b></label><br>
-    <textarea placeholder="YOUR NAME......" name="" rows="12" cols= "100" style= "background-color: rgb(196, 196, 196)"></textarea><br><br>
+    <label for="name"><b>NAME:</b></label>
+    <input type="text" size="contactName" id="contactName" placeholder="YOUR NAME......" style = "background-color: rgb(196, 196, 196)"><br><br>
+
+    <label for="name"><b>EMAIL:</b></label>
+    <input type="text" size="emailName" id="emailName" placeholder="YOUR EMAIL ADDRESS......"style = "background-color: rgb(196, 196, 196)"><br><br>
+
+
+    <label for="contactComment"><b>MESSAGE:</b></label><br>
+    <textarea placeholder="YOUR NAME......" name="" rows="12" cols= "80" style= "background-color: rgb(196, 196, 196)"></textarea><br><br>
 
     <input type="submit" value="Submit">
 
 <form>
+
+    
 <html>
