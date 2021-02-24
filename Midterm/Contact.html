@@ -1,32 +1,69 @@
 <title>Midterm: Reggie's World - Contact</title>
 
+
+<!DOCTYPE html>
+<html>
 <style>
     
 .contentDiv {
     border: 5px outset black;
                 background-color: white;
                 text-align: center;
+                background-image: url('Images/web\ back.png') ;
+
+}
+
+li {
+    display: inline;
+    padding: 10px;
+}
+
+.topNav {
+list-style-type: none;
+  text-align: right;
+  font-size: 20px;
+  color: white;
+  padding: 50px;
+  margin-top: 0px;
+}
+
+.navlogo {
+    display: block;
+  
 }
 
 form {
  text-align: center; 
+ padding: 25px;
+ background-color: rgb(119, 119, 119);
+font-style: italic;
 }
 
-            h1 {color: rgb(53, 53, 53); font-family:Verdana, Geneva, Tahoma, sans-serif}
+            h1 {color: rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif}
             h2 {color: rgb(28, 45, 194); font-family:Verdana, Geneva, Tahoma, sans-serif}
-            h3 {color: black; font-family:Verdana, Geneva, Tahoma, sans-serif}
+            h3 {color: rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif}
             body {background-color: rgba(57, 57, 58, 0.658);}
             img {border:5px solid #000000 }
-            nav {background: rgb(83, 83, 83); }
+           
+            
         
 </style>
 
-<li>Navigation:</li>
+
+
+<div class= "topNav"
+
 <ul>
+    <a href="Home.html">
+    <img src= "Images/Maque Logo with Drop.png" style= "width: 100px" style="height: 100px" class="navlogo">
+    </a>
     
     <li><a href="About.html">About</a></li>
     <li><a href="Events.html">Events</a></li>
     <li><a href="Contact.html">Contact</a></li>
+</ul>
+
+</div>
 
 <div class= "contentDiv">
 
@@ -35,13 +72,14 @@ form {
 <img src="Images\Circle Reggie.png" alt="" style= "width: 250px" style="height: 200px" style="border-style: solid ;">
   
 <form action="mailto:reggiemaque@gmail.com" method="POST" name="emailForm">
-    <label for="contactName">Name:</label><br/>
-    <input type="text" size="contactName" id="contactName"><br><br>
-    <label for="contactComment">Message:</label></label><br>
-    <textarea name="" rows="6" cols= "100">
+    <label for="name"><b>Name:</b></label>
+    <input type="text" size="contactName" id="contactName" placeholder="YOUR NAME......"><br><br>
+    <label for="contactComment"><b>Message:</b></label></label><br>
+    <textarea name="" rows="12" cols= "100" placeholder="YOUR MESSAGE......" style= "background-color: rgb(196, 196, 196)";>
 
     </textarea><br><br>
 
     <input type="submit" value="Submit"
 
 <form>
+<html>
