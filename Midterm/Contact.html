@@ -84,12 +84,19 @@ form {
  background-color: rgb(119, 119, 119);
 font-style: italic;
 border-radius: 25px;
-font-family:Verdana, Geneva, Tahoma, sans-serif
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
 }
 
 textarea {
-  resize: inline;
+  resize: none;
   border-radius: 15px;
+  
+overflow: auto;
+  
+
+  ;
 }
 
 
@@ -99,6 +106,7 @@ textarea {
                         h3 {color: rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif}
                         body {background-color: rgba(57, 57, 58, 0.658)}
                         img {border:5px solid #000000 }
+                        :placeholder-shown{text-align: center;}
             
         
 </style>
@@ -130,11 +138,11 @@ textarea {
     <input type="text" size="contactName" id="contactName" placeholder="YOUR NAME......" style = "background-color: rgb(196, 196, 196)"><br><br>
 
     <label for="name"><b>EMAIL:</b></label>
-    <input type="text" size="emailName" id="emailName" placeholder="YOUR EMAIL ADDRESS......"style = "background-color: rgb(196, 196, 196)"><br><br>
+    <input type="text" size="emailName" id="emailName" placeholder="EMAIL ADDRESS......"style = "background-color: rgb(196, 196, 196)"><br><br>
 
 
     <label for="contactComment"><b>MESSAGE:</b></label><br>
-    <textarea placeholder="YOUR NAME......" name="" rows="12" cols= "80" style= "background-color: rgb(196, 196, 196)"></textarea><br><br>
+    <textarea placeholder="YOUR NAME......" name="" rows="8" cols= "35" style= "background-color: rgb(196, 196, 196)" class="textarea" ></textarea><br><br>
 
     <input type="submit" value="Submit">
 
