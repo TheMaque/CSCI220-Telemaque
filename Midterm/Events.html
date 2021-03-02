@@ -5,12 +5,14 @@
     
 <title>Midterm: Reggie's World - Events</title>
 
+<body>
+    
+
 <style>
     
     .contentDiv
      {
-        border: 5px outset black;
-        background-color: white;
+        border: 5px inset whitesmoke;
         text-align: center;
         background-image: url('Images/web\ back.png') ;
     
@@ -42,10 +44,118 @@
     border-color: black;
     box-sizing: border-box;
 }
+
+body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+#calendar {
+	width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#calendar tr, #calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ width: 100%;
+}
+
+caption {
+	text-align: center;
+  grid-column: 1 / -1;
+  font-size: 130%;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#calendar a {
+	color: #8e352e;
+	text-decoration: none;
+}
+
+#calendar td, #calendar th {
+	padding: 5px;
+	box-sizing:border-box;
+	border: 1px solid #ccc;
+}
+
+#calendar .weekdays {
+	background: #000000;  
+}
+
+
+#calendar .weekdays th {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 20px;
+	border: none !important;
+	padding: 10px 6px;
+	color: #fff;
+	font-size: 13px;
+}
+
+#calendar td {
+	min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#calendar .date {
+	text-align: center;
+	margin-bottom: 5px;
+	padding: 4px;
+	background: #333;
+	color: #fff;
+	width: 20px;
+	border-radius: 50%;
+  flex: 0 0 auto;
+  align-self: flex-end;
+}
+
+#calendar .event {
+  flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	background: #e4f2f2;
+	border: 1px solid #b5dbdc;
+	color: #009aaf;
+	text-decoration: none;
+}
+
+#calendar .event-desc {
+	color: #666;
+	margin: 3px 0 7px 0;
+	text-decoration: none;	
+}
+
+
+.events
+{
+ text-align: center;
+ background-image: url('Images/web\ back.png');
+ border: inset whitesmoke 5px;
+ 
+}
+
+.eventIMG
+{
+
+    border: outset #000000 5px;
+    border-radius: 400px ;
+}
+
     
 
                         h1 {color: rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif;}
-                        h2 {color: rgb(202, 202, 202); font-family:Arial, Helvetica, sans-serif, Geneva, Tahoma, sans-serif; font-size: 10px;}
+                        h2 {color: rgb(202, 202, 202); font-family:Arial, Helvetica, sans-serif, Geneva, Tahoma, sans-serif; font-size: 20px;}
                         h3 {color: rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif}
                         body {background-color: rgba(57, 57, 58, 0.658);}
                         img {border:5px solid #000000 }
@@ -71,5 +181,754 @@
 </ul>
 
 </div>
+
+<div class = "contentDiv">
+
+    <h1>REGGIE'S SCHEDULE! 📅</h1>
+
+    <img src= "Images/Tech Reggie.jpeg" class="eventIMG"> 
+
+
+        <h2></p><i> Here is Reggie's schedule, he is a busy student athlete with alot of responsibilities and jobs. He currently a offensive lineman, Lowes reciever and stocker, and social media assistant for the football team. He is advidly at his house he shares with his girlfriend and dog named Boss. Reggie is always on the move so here is his busy month of March (SUBJECT TO CHANGE.)</i> 
+        <p></h2>
+
+</div>
+
+
+
+
+
+
+<div class="events">
+
+    
+
+    <table id="calendar">
+        <caption>March 2021</caption>
+        <tr class="weekdays">
+          <th scope="col">Sunday</th>
+          <th scope="col">Monday</th>
+          <th scope="col">Tuesday</th>
+          <th scope="col">Wednesday</th>
+          <th scope="col">Thursday</th>
+          <th scope="col">Friday</th>
+          <th scope="col">Saturday</th>
+        </tr>
+      
+        <tr class="days">
+          <td class="day other-month">
+            <div class="date">28</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                Zoom Meetings.
+                </div>
+                <div class="event-time">
+                  
+                 2:00 PM to 3:30 PM
+                </div>
+          </td>
+          <td class="day other-month">
+            <div class="date">1</div>
+            <div class="event">
+              <div class="event-desc">
+                Practice at the Dome.
+              </div>
+              <div class="event-time">
+                
+                6:00 AM to 7:30 AM
+              </div>
+              
+              <div class="event-desc">
+                Lift
+              </div>
+              <div class="event-time">
+                
+                9:00 AM to 10:00 AM
+              </div>
+              <div class="event-desc">
+                Classes (BUS-101, CSCI-211, CSCI-220)
+              </div>
+              <div class="event-time">
+                
+                12:00 PM to 6:15 PM
+            </div>
+          </td>
+          <td class="day other-month">
+            <div class="date">2</div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day other-month">
+            <div class="date">3</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+
+          </td>
+          <td class="day other-month">
+            <div class="date">4</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+      
+      
+          <td class="day">
+            <div class="date">5</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">6</div>
+            <div class="event">
+                <div class="event-desc">
+                 GAMEDAY (Taylor)
+                </div>
+                <div class="event-time">
+                  
+                12:00 PM
+                
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day">
+            <div class="date">7</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                Zoom Meetings.
+                </div>
+                <div class="event-time">
+                  
+                 2:00 PM to 3:30 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">8</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">9</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">10</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">11</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+               
+              </div>
+              <div class="event-time">
+                
+              </div>
+            </div>
+          </td>
+          <td class="day">
+            <div class="date">12</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+
+          </td>
+          <td class="day">
+            <div class="date">13</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 GAMEDAY (@ Concordia)
+                </div>
+                <div class="event-time">
+                  
+                12:00 PM
+          </td>
+        </tr>
+        <tr>
+          <td class="day">
+            <div class="date">14</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                Zoom Meetings.
+                </div>
+                <div class="event-time">
+                  
+                 2:00 PM to 3:30 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">15</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">16</div>
+
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">17</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">18</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+              <div class="event-desc">
+                
+              </div>
+              <div class="event-time">
+               
+              </div>
+            </div>
+          </td>
+          <td class="day">
+            <div class="date">19</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">20</div>
+            <div class="event">
+                <div class="event-desc">
+                 GAMEDAY (@ Indiana Wesleyan)
+                </div>
+                <div class="event-time">
+                  
+                12:00 PM
+          </td>
+        </tr>
+        <tr>
+      
+          <td class="day">
+            <div class="date">21</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                Zoom Meetings.
+                </div>
+                <div class="event-time">
+                  
+                 2:00 PM to 3:30 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">22</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">23</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">24</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+          </td>
+          <td class="day">
+            <div class="date">25</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">26</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                 Practice at Bishop Darcy Stadium.
+                </div>
+                <div class="event-time">
+                  
+                 3:00 PM to 6:00 PM
+                </div>
+              <div class="event-desc">
+               
+              </div>
+              <div class="event-time">
+               
+              </div>
+            </div>
+          </td>
+          <td class="day">
+            <div class="date">27</div>
+            <div class="event">
+                <div class="event-desc">
+                 GAMEDAY (LTU)
+                </div>
+                <div class="event-time">
+                  
+                2:00 PM
+          </td>
+        </tr>
+        <tr>
+          <td class="day">
+            <div class="date">28</div>
+            <div class="event">
+                <div class="event-desc">
+                 Customer Fufillment. (Lowes)
+                </div>
+                <div class="event-time">
+                  
+                 Whenever they schedule me. (When varies.)
+                </div>
+            
+            <div class="event">
+                <div class="event-desc">
+                Zoom Meetings.
+                </div>
+                <div class="event-time">
+                  
+                 2:00 PM to 3:30 PM
+                </div>
+          </td>
+          <td class="day">
+            <div class="date">29</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+              
+              </div>
+              <div class="event-time">
+                <td class="day">
+                    <div class="date">30</div>
+                    <div class="event">
+                        <div class="event-desc">
+                         Customer Fufillment. (Lowes)
+                        </div>
+                        <div class="event-time">
+                          
+                         Whenever they schedule me. (When varies.)
+                        </div>
+                    
+                    <div class="event">
+                        <div class="event-desc">
+                         Practice at Bishop Darcy Stadium.
+                        </div>
+                        <div class="event-time">
+                          
+                         3:00 PM to 6:00 PM
+                        </div>
+                <td class="day">
+            <div class="date">31</div>
+            <div class="event">
+                <div class="event-desc">
+                  Practice at the Dome.
+                </div>
+                <div class="event-time">
+                  
+                  6:00 AM to 7:30 AM
+                </div>
+                
+                <div class="event-desc">
+                  Lift
+                </div>
+                <div class="event-time">
+                  
+                  9:00 AM to 10:00 AM
+                </div>
+                <div class="event-desc">
+                  Classes (BUS-101, CSCI-211, CSCI-220)
+                </div>
+                <div class="event-time">
+                  
+                  12:00 PM to 6:15 PM
+              </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+      
+      </table>
+      
+
+</div>
+
+</body>
 
 <html>
