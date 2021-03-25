@@ -40,20 +40,33 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
 
             head {border-top: black 5px;}
             
-            .addBtn:hover {
-            background-color: #bbb;
-            }
-            
+            /* When hovered over changes background color of specific li */
             ul li:hover {
-            background: #ddd; }
+            background: lightgray; }
 
             /* When clicked on, add a background color and strike out text */
             ul li.checked {
-            background: #888;
+            background: rgb(112, 102, 102);
             color: #fff;
             text-decoration: line-through; }
 
+            /* Styling for each list item, even a transform property which changees all characters to uppercase (personal prefrence) */
+            ul li {
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            padding: 12px 8px 12px 40px;
+            text-transform: uppercase;
+            font-size: 18px;}
 
+            /* Styling for all inputs (taskInput, Add button, and clear button.*/
+            input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
+             
+            .addButton {font-size: 15px;padding: 10px;}
+
+            .taskInput {font-size: 15px; padding: 10px; text-transform: uppercase;}
+
+            .clearButton {font-size: 15px;padding: 10px;}
             
             </style>
             
@@ -62,9 +75,13 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
             <body>
 
 
-                <div id="myDIV" class="header">
-                <input type="text" id="taskInput" placeholder="Add a task?">
-                <input type="submit" value="Add" class="addBtn" onclick="addTask()">
+                <div id="toDoDiv">
+
+                 <!-- taskInput bar that a user may type in.-->
+                <input type="text" id="taskInput" class="taskInput" placeholder="Add a task?" size=70px" height="100%">
+                
+                 <!-- Add task button that adds what is in the taskInput to the UL-->
+                <input type="submit" value="Add" onclick="addTask()" class= "addButton" >
 
               </div>
               
@@ -74,41 +91,31 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
               
               <script>
              
-              
              
               
-              // Create a new list item when clicking on the "Add" button
+              // Creates a new list item when the add button is pressed
               function addTask() {
                 var li = document.createElement("li");
                 var inputValue = document.getElementById("taskInput").value;
                 var t = document.createTextNode(inputValue);
                 li.appendChild(t);
+                
+                // Alert when nothing is typed is give a message to the user to type something.
                 if (inputValue === '') {
                   alert("There must be a task typed here!");
                 } else {
                   document.getElementById("unorderedList").appendChild(li);
                 }
                 document.getElementById("taskInput").value = "";
-              
-                var span = document.createElement("SPAN");
-                span.className = "close";
-                span.appendChild(txt);
-                li.appendChild(span);
-              
-                for (i = 0; i < close.length; i++) {
-                  close[i].onclick = function() {
-                    var div = this.parentElement;
-                    div.style.display = "none";
-                  }
-                }
               }
 
-              function ClearButton(){
+              // Function to empty the UL when clear list button is clicked.
+              function clearButton(){
                 $('#unorderedList').empty();
             
               }
              
-              // Add a "checked" symbol when clicking on a list item
+            // When a user clicks on an item in the list, cross through the item and toggles "checked" class.
             var list = document.querySelector('ul');
             list.addEventListener('click', function(ev) {
             if (ev.target.tagName === 'LI') {
@@ -117,15 +124,17 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
             }, false);
 
              
-           </script> 
+          </script> 
 
-        <input type="submit" value="Clear List" class = clearBtn" onclick="ClearButton()">
+
+         
+          <!-- Clear list button When a user clicks the "Clear List" button, use JavaScript to remove all existing <li> tags from the unordered list -->
+            <input type="submit" value="Clear List" onclick="clearButton()" class="clearButton"> 
 
             </body>
 
         </div>
             
-           
 
             <script src="../jquery-3.6.0.js"></script>
 
