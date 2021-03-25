@@ -50,7 +50,7 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
             color: #fff;
             text-decoration: line-through; }
 
-            /* Styling for each list item, even a transform property which changees all characters to uppercase (personal prefrence) */
+            /* Styling for each list item, includes a transform property which changees all characters to uppercase (personal prefrence), and cursor appearance when hovered over item. */
             ul li {
             cursor: pointer;
             position: relative;
@@ -74,9 +74,6 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
 
             <body>
 
-
-                <div id="toDoDiv">
-
                  <!-- taskInput bar that a user may type in.-->
                 <input type="text" id="taskInput" class="taskInput" placeholder="Add a task?" size=70px" height="100%">
                 
@@ -85,6 +82,7 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
 
               </div>
               
+              <!-- Calling out the id selector for the UL that will be used in the DOM query. -->
               <ul id="unorderedList">
                
               </ul>
@@ -93,7 +91,7 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
              
              
               
-              // Creates a new list item when the add button is pressed
+              // Creates a new list item when the add button is pressed.
               function addTask() {
                 var li = document.createElement("li");
                 var inputValue = document.getElementById("taskInput").value;
@@ -123,7 +121,7 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
              }
             }, false);
 
-             
+          // End of script.
           </script> 
 
 
@@ -135,7 +133,7 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
 
         </div>
             
-
+          <!-- Jquery call out. -->
             <script src="../jquery-3.6.0.js"></script>
 
             
