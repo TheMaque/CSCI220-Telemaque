@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+ 
 <style> 
 
 .on{background-color: crimson;}
@@ -8,17 +8,12 @@
 
 h1 { text-align:center;padding: 20px; color: green;}
 
-.div {
-    width: 300px;
-    float: left;
-    padding: 2px;
-    margin: 3px;
-    background-color: #eee;}
-
-form {text-align: center;}
 
  </style>
-   
+  
+  <script src="../jquery-3.6.0.js"></script>
+ 
+
         <head> 
             <title>Week 11 Lab: Installing & Using jQuery.</title>
                
@@ -27,31 +22,26 @@ form {text-align: center;}
             
            
             </head>
-            
-
-       
         <body>
 
         
             <form action= name=""></form>
                <label for="Title">Submit your ticket.</label><br/>
-                <input type="text" size="contactName" id="contactName"><br><br>
-                <textarea name="" rows="6" cols= "100">
-            
+                <input id = "input1" type="text" size="contactName" id="contactName"><br><br>
+                <textarea id= "textarea1" name="" rows="6" cols= "100">
                 </textarea><br><br>
-            
                 <input type="submit" value="Submit">
             
             <form>   
 
-               <div id="formDiv">id="formDiv"</div>
-
               
                 <script>
-                $( "#formDiv" ).css( "border", "3px solid red" );
+                $("#input1").css( "border", "3px solid red" );
+                $("#textarea1").css( "border", "3px solid blue" );
+
                 </script>
 
-`            <script src="../jquery-3.6.0.js"></script> 
+ 
 
             
             </html>
