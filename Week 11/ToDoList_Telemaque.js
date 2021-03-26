@@ -26,6 +26,8 @@
           // Function to empty the UL when clear list button is clicked.
               function clearButton() {
                 
-                $('#unorderedList').empty();
+                var ul = document.getElementById("unorderedList");
+                while(ul.firstChild) ul.removeChild(ul.firstChild);
+
             
               }
