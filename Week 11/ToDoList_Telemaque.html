@@ -87,54 +87,15 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
                
               </ul>
               
-              <script>
-             
-             
-              
-              // Creates a new list item when the add button is pressed.
-              function addTask() {
-                var li = document.createElement("li");
-                var inputValue = document.getElementById("taskInput").value;
-                var t = document.createTextNode(inputValue);
-                li.appendChild(t);
-                
-                // Alert when nothing is typed is give a message to the user to type something.
-                if (inputValue === '') {
-                  alert("There must be a task typed here!");
-                } else {
-                  document.getElementById("unorderedList").appendChild(li);
-                }
-                document.getElementById("taskInput").value = "";
-              }
-
-              // Function to empty the UL when clear list button is clicked.
-              function clearButton(){
-                $('#unorderedList').empty();
-            
-              }
-             
-            // When a user clicks on an item in the list, cross through the item and toggles "checked" class.
-            var list = document.querySelector('ul');
-            list.addEventListener('click', function(ev) {
-            if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
-             }
-            }, false);
-
-          // End of script.
-          </script> 
-
-
-         
           <!-- Clear list button When a user clicks the "Clear List" button, use JavaScript to remove all existing <li> tags from the unordered list -->
-            <input type="submit" value="Clear List" onclick="clearButton()" class="clearButton"> 
+              <input type="submit" value="Clear List" onclick="clearButton()" class="clearButton"> 
 
             </body>
 
         </div>
             
-          <!-- Jquery call out. -->
-            <script src="../jquery-3.6.0.js"></script>
+          <!-- JavaScript call out. -->
+            <script src="ToDoList_Telemaque.js"></script>
 
             
             </html>
