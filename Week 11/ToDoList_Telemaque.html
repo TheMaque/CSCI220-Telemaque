@@ -34,7 +34,10 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
 
 
             <style>
-            h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+           
+           html {background-color: rgb(34, 34, 34);}
+           
+            h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
 
             body {text-align: center;}
 
@@ -42,12 +45,13 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
             
             /* When hovered over changes background color of specific li */
             ul li:hover {
-            background: lightgray; }
+            background: lightgray; 
+            color: black;}
 
             /* When clicked on, add a background color and strike out text */
             ul li.checked {
             background: rgb(112, 102, 102);
-            color: #fff;
+            color: whitesmoke;
             text-decoration: line-through; }
 
             /* Styling for each list item, includes a transform property which changees all characters to uppercase (personal prefrence), and cursor appearance when hovered over item. */
@@ -57,7 +61,8 @@ When a user clicks the "Clear List" button, use JavaScript to remove all existin
             text-align: left;
             padding: 12px 8px 12px 40px;
             text-transform: uppercase;
-            font-size: 18px;}
+            font-size: 18px;
+            color: whitesmoke;}
 
             /* Styling for all inputs (taskInput, Add button, and clear button.*/
             input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
