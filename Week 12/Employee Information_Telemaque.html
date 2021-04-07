@@ -1,0 +1,92 @@
+<!--
+ 
+# CSCI220-Telemaque
+
+COURSE NUMBER: CSCI220-01 Web Programming
+
+Full Name: Reginald Telemaque
+
+Major: Computer Science
+
+Purpose:
+
+Build a employee infroamtion form.
+
+JavaScript libraries like jQuery provide developers with the ability to rapidly create interactive websites by simplifying routine tasks. This assignment will allow you to demonstrate your ability to create interactive websites using jQuery. For the assignment, create a new web page that simulates a web-based application for creating and sorting tabular data. Your solution should adhere to the following acceptance criteria.
+
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+ <script>src="../jquery-3.6.0.js"></script>
+
+    <title>👨‍💼: Employee Information. - Week 12</title>
+
+    <h1><b>👨‍💼: Employee Information.</b></h1>
+
+
+    <style>
+   
+   html {background-color: rgb(34, 34, 34);}
+   
+    h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
+
+    body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
+
+    head {border-top: black 5px;}
+
+    input{border: black outset 2px; padding: 5px; border-radius: 10px; font-size: large;}
+    
+
+    </style>
+
+<form >
+    <label for="name"><b>Name:</b></label>
+    <input type="text" id="employeeName" placeholder="Name..." ><br><br>
+
+    <label for="name"><b>Title:</b></label>
+    <input type="text" id="employeeTitle" placeholder="Title..."><br><br>
+
+    <label for="name"><b>Hire Date:</b></label>
+    <input type="date" id="employeeHireDate"><br><br>
+
+
+    
+
+    <input type="submit" value="Submit" id= "submit" style="position: right;">
+
+</form>
+<table id="myTable"></table>
+<br>
+<thead>
+<th nowrap>Name:</th>      
+<th nowrap>Title:</th>      
+<th nowrap>Hire Date:</th>
+</tr>
+</thead>
+<tbody >
+</tbody>
+</table>
+</div>
+
+<script >
+    $('#submit').on('click', function() {
+    var Name=$('#employeeName').val();
+    var Title=$('#employeeTitle').val();
+    var HireDate=$('#employeeHireDate').val();
+    if(employeeName!="" && employeeTitle!="" && employeeHireDate!=""){
+    $('#myTable tbody').append('<tr class="child"><td>'+Name+'</td><td>'+Title+'</td><td>'+HireDate+'</td><td><a href="javascript:void(0);" class="remCF1 btn btn-small btn-danger">Remove</a></td></tr>');
+    }
+    });
+  
+    </script>
+
+
+
+
+
+
+            
+ </html>
