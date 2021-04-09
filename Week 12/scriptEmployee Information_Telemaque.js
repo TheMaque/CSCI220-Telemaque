@@ -1,3 +1,4 @@
+// Submit click function for each category of data.
 $(document).ready(function(){
     $("#submit").click(function()
     {
@@ -9,8 +10,8 @@ $(document).ready(function(){
        // Adds a new row of data for the employee.
        if(name ==="" || title ==="" ||hiredate ==="")
        {
-           
-           alert("Must fill each textbox!")
+          // Validation for if input box is empty. ("")
+          alert("Must fill each textbox!")
            
                $('#name').val("");
                $('#title').val("");
@@ -25,10 +26,11 @@ $(document).ready(function(){
                $('#hiredate').val("");
        }
        
-       $(document).on('click','.remCF1',function(){
+       // Click function button for a remove tab for each row
+        $(document).on('click','.remCF1',function(){
         $(this).parent().parent().remove();
         $('#myTable tbody tr').each(function(i){            
-    $($(this).find('td')[0]).html(i+1);          
+        $($(this).find('td')[0]).html(i+1);          
 });
 });
 
@@ -52,6 +54,7 @@ $('.sortable').each(function() {
         $tbody.append(rows.reverse());               
       } else {                                                               
         $header.addClass('ascending');               
+        
         // Remove asc or desc from all other headers
         $header.siblings().removeClass('ascending descending'); 
         if (compare.hasOwnProperty(order)) {  
