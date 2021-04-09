@@ -44,49 +44,52 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
     .tableDIV {border: whitesmoke outset 5px; padding: 50px;}
 
     table, th, td {
-            border: 1px solid whitesmoke;
-             border-collapse: collapse;
-              padding: 10px;}
-
+    border: 1px solid whitesmoke;
+     border-collapse: collapse;
+    padding: 10px;}
 
     .formDIV {padding: 25px;}
 
     table {
 	margin: 0 auto;
-	width: 780px;}
+	width: 780px;
+    border: outset whitesmoke 5px;}
 
     table#rates	{width: 380px;}
-th, td {
+    
+    th, td {
 	border-radius: 3px;
 	color: #333;
 	padding: 7px 10px 5px 10px;
 	min-width: 9em;
 	text-align: left;}
-th {
+
+    th {
 	background-color: #d7d7d7;
 	font-weight: bold;
 	text-transform: uppercase;}
-td {
+    
+    td {
 	background-color: #fff;}
-table.sortableEmployees th:hover {
+
+    table.sortableEmployees th:hover {
 	cursor: pointer;}
-th.ascending, th.descending, table.sortable th:hover {
+
+    th.ascending, th.descending, table.sortable th:hover {
 	background-color: #00cccc;
 	color: #fff;}
 
-th.ascending:after {
+    th.ascending:after {
 	font-size: 60%;
     content: '\25B2';
     float: left;
 	padding: 4px 5px 0 0;}
-th.descending:after {
+    
+    th.descending:after {
 	font-size: 60%;
     content: '\25BC';
     float: left;
 	padding: 4px 5px 0 0;}
-
-    
-    
 
     </style>
 
@@ -97,13 +100,12 @@ th.descending:after {
     <input id ="name" type="text" name="name" placeholder="Name..." ><br><br>
 
     <label<b>Title:</b></label>
+   
     <input id ="title" type="text" name="title" placeholder="Title..."><br><br>
 
     <label><b>Hire Date:</b></label>
-    <input id="hiredate"type="date" name="hiredate"><br><br>
-
-
     
+    <input id="hiredate" type="date" name="hiredate"><br><br>
 
     <input type="button" value = "Submit" id= "submit">
 
@@ -120,7 +122,7 @@ th.descending:after {
             <th id="name">Name</th>
             <th id="title">Title</th>
             <th id="hiredate">Hire Date</th>
-            <th id="action">Action</th>
+            <th id="remove">Remove</th>
     
           </tr>
         </thead>
@@ -137,7 +139,7 @@ $(document).ready(function(){
     {
       var name = $.trim($("#name").val());
        var title = $.trim($("#title").val());
-       var date = $("#hiredate").val();
+       var hiredate = $("#hiredate").val();
        
 
        //adds new table row 
@@ -168,20 +170,10 @@ $(document).ready(function(){
 
       
 });
-       
- $(document).ready(function () {
-$('#employeeInformation').datepicker({
- format: "dd/mm/yyyy"
-    
+ 
 });
-});
-   });
    
-
-
 </script>
 
-
-     
 </body>
  </html>
