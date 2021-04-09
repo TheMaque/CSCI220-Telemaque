@@ -32,16 +32,18 @@ $(document).ready(function(){
 });
 });
 
+
+// Function for class to stort each row of data.
 $('.sortable').each(function() {
-    var $table = $(this);                     // This sortable table
-    var $tbody = $table.find('tbody');        // Store table body
-    var $controls = $table.find('th');        // Store table headers
-    var rows = $tbody.find('tr').toArray();   // Store array containing rows
+    var $table = $(this);                     
+    var $tbody = $table.find('tbody');       
+    var $controls = $table.find('th');        
+    var rows = $tbody.find('tr').toArray();   
   
-    $controls.on('click', function() {        // When user clicks on a header
-      var $header = $(this);                  // Get the header
-      var order = $header.data('sort');       // Get value of data-sort attribute
-      var column;                             // Declare variable called column
+    $controls.on('click', function() {        
+      var $header = $(this);                  
+      var order = $header.data('sort');      
+      var column;                             
   
     
       // If selected item has ascending or descending class, reverse contents
