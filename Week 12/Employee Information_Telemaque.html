@@ -20,7 +20,9 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
 
 <!DOCTYPE html>
 <html>
- <script>src="../jquery-3.6.0.js"></script>
+<script src="../jquery-3.6.0.js"></script>
+</body>
+
 
     <title>👨‍💼: Employee Information. - Week 12</title>
 
@@ -39,54 +41,147 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
 
     input{border: black outset 2px; padding: 5px; border-radius: 10px; font-size: large;}
     
+    .tableDIV {border: whitesmoke outset 5px; padding: 50px;}
+
+    table, th, td {
+            border: 1px solid whitesmoke;
+             border-collapse: collapse;
+              padding: 10px;}
+
+
+    .formDIV {padding: 25px;}
+
+    table {
+	margin: 0 auto;
+	width: 780px;}
+
+    table#rates	{width: 380px;}
+th, td {
+	border-radius: 3px;
+	color: #333;
+	padding: 7px 10px 5px 10px;
+	min-width: 9em;
+	text-align: left;}
+th {
+	background-color: #d7d7d7;
+	font-weight: bold;
+	text-transform: uppercase;}
+td {
+	background-color: #fff;}
+table.sortableEmployees th:hover {
+	cursor: pointer;}
+th.ascending, th.descending, table.sortable th:hover {
+	background-color: #00cccc;
+	color: #fff;}
+
+th.ascending:after {
+	font-size: 60%;
+    content: '\25B2';
+    float: left;
+	padding: 4px 5px 0 0;}
+th.descending:after {
+	font-size: 60%;
+    content: '\25BC';
+    float: left;
+	padding: 4px 5px 0 0;}
+
+    
+    
 
     </style>
 
-<form >
-    <label for="name"><b>Name:</b></label>
-    <input type="text" id="employeeName" placeholder="Name..." ><br><br>
+<div class="formDIV">
 
-    <label for="name"><b>Title:</b></label>
-    <input type="text" id="employeeTitle" placeholder="Title..."><br><br>
+<form id="employeeInformation">
+    <label><b>Name:</b></label>
+    <input id ="name" type="text" name="name" placeholder="Name..." ><br><br>
 
-    <label for="name"><b>Hire Date:</b></label>
-    <input type="date" id="employeeHireDate"><br><br>
+    <label<b>Title:</b></label>
+    <input id ="title" type="text" name="title" placeholder="Title..."><br><br>
+
+    <label><b>Hire Date:</b></label>
+    <input id="hiredate"type="date" name="hiredate"><br><br>
 
 
     
 
-    <input type="submit" value="Submit" id= "submit" style="position: right;">
+    <input type="button" value = "Submit" id= "submit">
 
 </form>
-<table id="myTable"></table>
-<br>
-<thead>
-<th nowrap>Name:</th>      
-<th nowrap>Title:</th>      
-<th nowrap>Hire Date:</th>
-</tr>
-</thead>
-<tbody >
-</tbody>
-</table>
+
 </div>
 
-<script >
-    $('#submit').on('click', function() {
-    var Name=$('#employeeName').val();
-    var Title=$('#employeeTitle').val();
-    var HireDate=$('#employeeHireDate').val();
-    if(employeeName!="" && employeeTitle!="" && employeeHireDate!=""){
-    $('#myTable tbody').append('<tr class="child"><td>'+Name+'</td><td>'+Title+'</td><td>'+HireDate+'</td><td><a href="javascript:void(0);" class="remCF1 btn btn-small btn-danger">Remove</a></td></tr>');
-    }
-    });
-  
-    </script>
+<div class = "tableDIV">
 
 
-
-
-
-
+    <table id="myTable">
+        <thead>
+          <tr>
+            <th id="name">Name</th>
+            <th id="title">Title</th>
+            <th id="hiredate">Hire Date</th>
+            <th id="action">Action</th>
+    
+          </tr>
+        </thead>
+        <tbody>
             
+</div>
+
+<script>
+
+
+
+$(document).ready(function(){
+    $("#submit").click(function()
+    {
+      var name = $.trim($("#name").val());
+       var title = $.trim($("#title").val());
+       var date = $("#hiredate").val();
+       
+
+       //adds new table row 
+       if(name ==="" || title ==="" ||hiredate ==="")
+       {
+           
+           alert("Must fill each textbox!")
+           
+               $('#name').val("");
+               $('#title').val("");
+               $('#hiredate').val("");
+       }
+       else
+       {
+           $('#myTable').append('<tr><td>'+name+'</td><td>'+title+'</td><td>'+hiredate+'</td><td><a href="javascript:void(0);"class="remCF1 btn btn-small btn-danger">Remove</a></td></tr>');
+
+               $('#name').val("");
+               $('#title').val("");
+               $('#hiredate').val("");
+       }
+       
+       $(document).on('click','.remCF1',function(){
+        $(this).parent().parent().remove();
+        $('#myTable tbody tr').each(function(i){            
+    $($(this).find('td')[0]).html(i+1);          
+});
+});
+
+      
+});
+       
+ $(document).ready(function () {
+$('#employeeInformation').datepicker({
+ format: "dd/mm/yyyy"
+    
+});
+});
+   });
+   
+
+
+</script>
+
+
+     
+</body>
  </html>
