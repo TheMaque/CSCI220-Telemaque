@@ -20,7 +20,10 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
 
 <!DOCTYPE html>
 <html>
-<script src="../jquery-3.6.0.js"></script>
+
+
+<link rel="stylesheet" href="stylingEmployee Information_Telemaque.css">
+
 </body>
 
 
@@ -28,70 +31,6 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
 
     <h1><b>👨‍💼: Employee Information.</b></h1>
 
-
-    <style>
-   
-   html {background-color: rgb(34, 34, 34);}
-   
-    h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
-
-    body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
-
-    head {border-top: black 5px;}
-
-    input{border: black outset 2px; padding: 5px; border-radius: 10px; font-size: large;}
-    
-    .tableDIV {border: whitesmoke outset 5px; padding: 50px;}
-
-    table, th, td {
-    border: 1px solid whitesmoke;
-     border-collapse: collapse;
-    padding: 10px;}
-
-    .formDIV {padding: 25px;}
-
-    table {
-	margin: 0 auto;
-	width: 780px;
-    border: outset whitesmoke 5px;}
-
-    table#rates	{width: 380px;}
-    
-    th, td {
-	border-radius: 3px;
-	color: #333;
-	padding: 7px 10px 5px 10px;
-	min-width: 9em;
-	text-align: left;}
-
-    th {
-	background-color: #d7d7d7;
-	font-weight: bold;
-	text-transform: uppercase;}
-    
-    td {
-	background-color: #fff;}
-
-    table.sortableEmployees th:hover {
-	cursor: pointer;}
-
-    th.ascending, th.descending, table.sortable th:hover {
-	background-color: #00cccc;
-	color: #fff;}
-
-    th.ascending:after {
-	font-size: 60%;
-    content: '\25B2';
-    float: left;
-	padding: 4px 5px 0 0;}
-    
-    th.descending:after {
-	font-size: 60%;
-    content: '\25BC';
-    float: left;
-	padding: 4px 5px 0 0;}
-
-    </style>
 
 <div class="formDIV">
 
@@ -116,64 +55,22 @@ JavaScript libraries like jQuery provide developers with the ability to rapidly 
 <div class = "tableDIV">
 
 
-    <table id="myTable">
+    <table id="myTable" class="sortable">
         <thead>
-          <tr>
-            <th id="name">Name</th>
-            <th id="title">Title</th>
-            <th id="hiredate">Hire Date</th>
-            <th id="remove">Remove</th>
-    
+         
+            <tr>
+            <th data-sort="name">Name</th>
+            <th data-sort="title">Title</th>
+            <th data-sort="hiredate">Hire Date</th>
+            <th data-sort="remove">Remove</th>
           </tr>
         </thead>
         <tbody>
             
 </div>
 
-<script>
-
-
-
-$(document).ready(function(){
-    $("#submit").click(function()
-    {
-      var name = $.trim($("#name").val());
-       var title = $.trim($("#title").val());
-       var hiredate = $("#hiredate").val();
-       
-
-       //adds new table row 
-       if(name ==="" || title ==="" ||hiredate ==="")
-       {
-           
-           alert("Must fill each textbox!")
-           
-               $('#name').val("");
-               $('#title').val("");
-               $('#hiredate').val("");
-       }
-       else
-       {
-           $('#myTable').append('<tr><td>'+name+'</td><td>'+title+'</td><td>'+hiredate+'</td><td><a href="javascript:void(0);"class="remCF1 btn btn-small btn-danger">Remove</a></td></tr>');
-
-               $('#name').val("");
-               $('#title').val("");
-               $('#hiredate').val("");
-       }
-       
-       $(document).on('click','.remCF1',function(){
-        $(this).parent().parent().remove();
-        $('#myTable tbody tr').each(function(i){            
-    $($(this).find('td')[0]).html(i+1);          
-});
-});
-
-      
-});
- 
-});
-   
-</script>
+<script src="../jquery-3.6.0.js"></script>
+<script src="scriptEmployee Information_Telemaque.js"></script>
 
 </body>
  </html>

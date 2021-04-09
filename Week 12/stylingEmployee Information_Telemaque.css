@@ -1,0 +1,59 @@
+html {background-color: rgb(34, 34, 34);}
+   
+h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
+
+body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
+
+head {border-top: black 5px;}
+
+input{border: black outset 2px; padding: 5px; border-radius: 10px; font-size: large;}
+
+.tableDIV {border: whitesmoke outset 5px; padding: 50px;}
+
+table, th, td {
+border: 1px solid whitesmoke;
+ border-collapse: collapse;
+padding: 10px;}
+
+.formDIV {padding: 25px;}
+
+table {
+margin: 0 auto;
+width: 780px;
+border: outset whitesmoke 5px;}
+
+table#rates	{width: 380px;}
+
+th, td {
+border-radius: 3px;
+color:black;
+padding: 7px 10px 5px 10px;
+min-width: 9em;
+text-align: left;}
+
+th {
+background-color: lightgrey;
+font-weight: bold;
+text-transform: uppercase;}
+
+td {
+background-color: whitesmoke;}
+
+table.sortableEmployees th:hover {
+cursor: pointer;}
+
+th.ascending, th.descending, table.sortable th:hover {
+background-color: #00cccc;
+color: darkslategrey;}
+
+th.ascending:after {
+font-size: 60%;
+content: '\25B2';
+float: left;
+padding: 4px 5px 0 0;}
+
+th.descending:after {
+font-size: 60%;
+content: '\25BC';
+float: left;
+padding: 4px 5px 0 0;}
