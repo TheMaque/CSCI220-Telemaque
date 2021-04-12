@@ -19,22 +19,13 @@ $(document).ready(function(){
        }
        else
        {
-           $('#myTable').append('<tr><td>'+name+'</td><td>'+title+'</td><td>'+hiredate+'</td><td><a href="javascript:void(0);"class="remCF1 btn btn-small btn-danger">Remove</a></td></tr>');
-
+           $('#myTable').append('<tr><td>'+name+'</td><td>'+title+'</td><td>'+hiredate+'</td>');
                $('#name').val("");
                $('#title').val("");
                $('#hiredate').val("");
        }
        
-       // Click function button for a remove tab for each row
-        $(document).on('click','.remCF1',function(){
-        $(this).parent().parent().remove();
-        $('#myTable tbody tr').each(function(i){            
-        $($(this).find('td')[0]).html(i+1);          
-});
-});
-
-
+      
 // Function for class to stort each row of data.
 $('.sortable').each(function() {
     var $table = $(this);                     
