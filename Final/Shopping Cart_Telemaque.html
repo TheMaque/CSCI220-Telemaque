@@ -20,7 +20,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 <!-- Stylesheet call out. -->
 <link rel="stylesheet" href="stylingShopping Cart_Telemaque.css">
 
-<link rel="icon" href="Maque Logo with Drop.png">
+<link rel="icon" href="Images/Maque Logo with Drop.png">
 
 </body>
 
@@ -32,7 +32,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
     <ul>
         <a href="https://www.sweetwater.com/">
-        <img src= "Maque Logo with Drop.png" style= "width: 100px" style="height: 100px" class="navlogo" >
+        <img src= "Images/Maque Logo with Drop.png" style= "width: 100px" style="height: 100px" class="navlogo" >
         </a>
         
         <li><a href="youtube.com"></a> Products </li>
@@ -48,17 +48,36 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
 <div class="shopping-cart">
 
-  <div class="column-labels">
-    <label class="image">Image</label>
-    <label class="manufacturer">Manufacturer</label>
-    <label class="prudctName">Product Name</label>
+    <label class="image">Image:</label> 
+    <label class="price">Price:</label>
+    <label class="quanity">Quantity:</label>
+    <label class="manufacturer">Manufacturer:</label>
+    <label class="productName">Product Name:</label>
     <label class="itemid">Item ID</label>
-    <label class="quanity">Quantity</label>
-    <label class="price">Price</label>
-    <label class="descritpon">Descripton</label>
+    <label class="product-description">Descripton:</label>
     <label class="available">Available</label>
+   
+      
   </div>
-
+  <div class="column-labels">
+  <div class="product1">
+    <div class="image">
+      <img src="https://media.sweetwater.com/images/items/120/SM57-medium.jpg">
+    </div>
+    <div class="product-details">
+      <div class="productName"></div>
+      <p class="product-description"></p>
+    </div>
+    <div class="product-price">99.00</div>
+    <div class="productQuantity">
+      <input type="number" value="1" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Remove
+      </button>
+    </div>
+  </div>
   
 
 <!-- Javascript call out. -->
