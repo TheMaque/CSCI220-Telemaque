@@ -13,23 +13,28 @@ head {border-top: black 5px;}
     text-align: right;
     font-size: 20px;
     color: white;
-    padding: 25px;
+    padding: 10px;
     margin-top: 0px;
+    background-color: rgb(99, 99, 99);
+
 }
+
+.searchBox {font-size: 15px; padding: 10px; float: left; width: auto;}
+
+input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
+
 
 .navlogo {
    display: block;
    border-radius: 50px;
-   border: whitesmoke outset 5px;
-   box-sizing: border-box;
-   height: auto;
-   width: auto;
+  
 }
+
+
 
 li {
    display: inline;
    padding: 10px;
-   position: relative;
    list-style: color rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -44,10 +49,3 @@ label {
 }
 
 
-
-
-.image { float: left; width: 20%; }
-.product-description { line-height: 1.4em;}
-.product-removal { float: right; width: 9%; }
-.product-price { float: left; width: 12%; text-align: right; }
-.productQuantity { float: left; width: 15%; }
