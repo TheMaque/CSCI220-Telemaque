@@ -20,8 +20,10 @@ head {border-top: black 5px;}
 .navlogo {
    display: block;
    border-radius: 50px;
-   border-color: black;
+   border: whitesmoke outset 5px;
    box-sizing: border-box;
+   height: auto;
+   width: auto;
 }
 
 li {
@@ -30,3 +32,22 @@ li {
    position: relative;
    list-style: color rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+label {
+   list-style-type: none;
+   font-size: 15px;
+   text-align: center;
+   color: white;
+   padding-right: 100px;
+   margin-top: 0px;
+   border: whitesmoke ;
+}
+
+
+
+
+.image { float: left; width: 20%; }
+.product-description { line-height: 1.4em;}
+.product-removal { float: right; width: 9%; }
+.product-price { float: left; width: 12%; text-align: right; }
+.productQuantity { float: left; width: 15%; }
