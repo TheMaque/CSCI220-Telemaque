@@ -2,7 +2,7 @@ html {background-color: rgb(34, 34, 34);}
    
 h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
 
-h2 {text-align: left; padding: 75px; font-size: 20px; border: whitesmoke outset 5px;}
+h2 {text-align: left; padding: 75px; font-size: 20px;}
 
 body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
 
@@ -30,7 +30,10 @@ input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
   
 }
 
+.shopping-cart {
 
+   border: outset whitesmoke 5px;
+}
 
 li {
    display: inline;
