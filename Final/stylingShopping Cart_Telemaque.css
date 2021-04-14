@@ -1,0 +1,32 @@
+html {background-color: rgb(34, 34, 34);}
+   
+h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
+
+h2 {text-align: left; padding: 75px; font-size: 20px; border: whitesmoke outset 5px;}
+
+body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
+
+head {border-top: black 5px;}
+
+.topNav {
+    list-style-type: none;
+    text-align: right;
+    font-size: 20px;
+    color: white;
+    padding: 25px;
+    margin-top: 0px;
+}
+
+.navlogo {
+   display: block;
+   border-radius: 50px;
+   border-color: black;
+   box-sizing: border-box;
+}
+
+li {
+   display: inline;
+   padding: 10px;
+   position: relative;
+   list-style: color rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
