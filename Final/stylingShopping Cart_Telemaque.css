@@ -156,24 +156,37 @@ button[class*=btn] {
   cursor: pointer;
 }
 
-/* Total Price */
-.total-price {
-  width: 83px;
-  padding-top: 27px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 300;
+.totals {
+  text-align: right;
+  padding: 50px;
 }
-
-footer {
-   
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: darkslategrey;
-      color: white;
-      text-align: center;
-      font-size: small;
+        
+        .totals-value {
+          float: right;
+          width: 21%;
+          text-align: right;
+        }
+      
+      
+     .grandTotal {
+      background-color: gray;
+      border: black outset 5px;
+    } 
+    
+    .checkout {
+      float: right;
+      border: 0;
+      margin-top: 20px;
+      padding: 6px 25px;
+      background-color: #6b6;
+      color: #fff;
+      font-size: 25px;
+      border-radius: 3px;
     }
-
-
+    
+    .checkout:hover {
+      background-color: #494;
+    }
+    
+    
+    
