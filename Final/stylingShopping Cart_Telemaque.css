@@ -1,10 +1,14 @@
 html {background-color: rgb(34, 34, 34);}
    
-h1 { text-align: center; padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
+h1 {padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
 
+<<<<<<< HEAD
 h2 {text-align: left; padding: 75px; font-size: 20px;}
+=======
+h2 {text-align: left;  font-size: 25px; color: whitesmoke;}
+>>>>>>> ba3e8829bf048c53f66d4da791a4f725cfd478af
 
-body {text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
+body {font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
 
 head {border-top: black 5px;}
 
@@ -13,10 +17,12 @@ head {border-top: black 5px;}
     text-align: right;
     font-size: 20px;
     color: white;
+    ;
     padding: 10px;
     margin-top: 0px;
-    background-color: rgb(99, 99, 99);
-
+   background-image: linear-gradient(grey 10%, black);
+   border: whitesmoke 3px outset;
+   border-radius: 5px;
 }
 
 .searchBox {font-size: 15px; padding: 10px; float: left; width: auto;}
@@ -30,15 +36,48 @@ input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
   
 }
 
+<<<<<<< HEAD
 .shopping-cart {
 
    border: outset whitesmoke 5px;
 }
 
+=======
+>>>>>>> ba3e8829bf048c53f66d4da791a4f725cfd478af
 li {
    display: inline;
    padding: 10px;
    list-style: color rgb(255, 255, 255); font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+   
+}
+
+button {
+   float: left;
+   width: auto;
+   padding: 10px;
+   background: #a5a5a5;
+   color: black;
+   border-left: none;
+   cursor: pointer;
+   font-size: 15px;
+   border-radius: 5px;
+   border: black 2px outset;
+
+ }
+
+ button:hover
+ {
+    background-color: whitesmoke;
+ }
+
+a {
+   color:whitesmoke;
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
 }
 
 label {
@@ -51,4 +90,111 @@ label {
    border: whitesmoke ;
 }
 
+.shopping-cart {
 
+  margin: 80px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: linear-gradient(grey 95%, black)
+}
+
+.title {
+  height: 60px;
+  border-bottom: 1px solid #E1E8EE;
+  padding: 40px;
+  padding-left: 80px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 80px;
+}
+
+.item {
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+}
+
+
+/* Buttons -  Delete and Like */
+.buttons {
+  position: relative;
+  padding-top: 30px;
+}
+
+
+/* Product Image */
+.image {
+  margin-right: 50px;
+}
+
+/* Product Description */
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+
+
+
+/* Product Quantity */
+.quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+}
+.quantity input {
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.totals {
+  text-align: right;
+  padding: 50px;
+}
+        
+        .totals-value {
+          float: right;
+          width: 21%;
+          text-align: right;
+        }
+      
+      
+     .grandTotal {
+      background-color: gray;
+      border: black outset 5px;
+    } 
+    
+    .checkout {
+      float: right;
+      border: 0;
+      margin-top: 20px;
+      padding: 6px 25px;
+      background-color: #6b6;
+      color: #fff;
+      font-size: 25px;
+      border-radius: 3px;
+    }
+    
+    .checkout:hover {
+      background-color: #494;
+    }
+    
+    
+    
