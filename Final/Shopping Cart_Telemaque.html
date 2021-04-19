@@ -20,7 +20,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 <!-- Stylesheet call out. -->
 <link rel="stylesheet" href="stylingShopping Cart_Telemaque.css">
 
-<link rel="icon" href="Images/Maque Logo with Drop.png">
+<link rel="icon" href="Images/MaqueBuy.png">
 
 </body>
 
@@ -34,7 +34,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
     <ul>
         <img src= "Images/MaqueBuy.png" style= "width: 250px" style="height: 250px" class="navlogo" >
         </a>
-        <input type="text" id="searchbox" class="searchBox" placeholder="Search MaqueBuy" size=70px" height="100%"> <button type="button">SEARCH</button>
+        <input type="text" id="searchbox" class="searchBox" placeholder="Search MaqueBuy" size=70px" height="100%"> <button class="button" type="button">SEARCH</button>
        
         <li><a href="#">Products</a></li>
         <li><a href="#">Brands</a></li>
@@ -49,16 +49,17 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
     <div class="shopping-cart">
         <!-- Title -->
-        <div class="title">
+        
             <h2>Your Cart.</h2>
+            <div class="title">
             <label class="product-image">Image:</label> 
-             <label class="quanity">Quantity:</label>
             <label class="price">Price:</label>
             <label class="manufacturer">Manufacturer:</label>
             <label class="productName">Product Name:</label>
-            <label class="itemid">Item ID</label>
-            <label class="product-description">Descripton:</label>
-            <label class="available">Available</label>
+            <label class="itemid">Item ID:</label>
+            <label class="product-description">Descripton:</label>  
+            <label class="available">Available:</label>
+            <label class="quanity">Quantity:</label>
         </div>
   
 
@@ -66,8 +67,6 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
         <!-- Product #1 -->
         <div class="item">
           <div class="buttons">
-            <span class="delete-btn"></span>
-            <span class="like-btn"></span>
           </div>
   
           <div class="image">
@@ -75,9 +74,8 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
           </div>
   
           <div class="description">
-            <span>Common Projects</span>
-            <span>Bball High</span>
-            <span>White</span>
+            <span>Shure Sm57</span>
+           
           </div>
   
           <div class="quantity">
@@ -86,7 +84,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
            
           </div>
   
-          <div class="total-price">$549</div>
+        
         </div>
   
         
@@ -98,16 +96,16 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
   <div class="totals">
         <div class="totals-item">
-          <label>Subtotal</label>
+          <label><b>Sub Total :</b></label>
           <div class="totals-value" id="cart-subtotal">71.97</div>
         </div>
         <div class="totals-item">
-          <label>Tax (7%)</label>
+          <label><b>Tax (7%) :</b></label>
           <div class="totals-value" id="cart-tax">3.60</div>
         </div>
         
         <div class="totals-item totals-item-total">
-          <label>Grand Total</label>
+          <label><b>Grand Total : </b></label>
           <div class="totals-value" id="cart-total">90.57</div>
         </div>
           
@@ -119,7 +117,7 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
 
       
-     <button class="checkout">Checkout</button>
+     <button class="checkout">CHECKOUT</button>
 
       
 

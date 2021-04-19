@@ -2,7 +2,7 @@ html {background-color: rgb(34, 34, 34);}
    
 h1 {padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
 
-h2 {text-align: left;  font-size: 25px; color: whitesmoke;}
+h2 {text-align: left;  font-size: 25px; color: whitesmoke; margin-left: 50px; padding-bottom: 25px; padding-top: 10px;}
 
 body {font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
 
@@ -13,12 +13,10 @@ head {border-top: black 5px;}
     text-align: right;
     font-size: 20px;
     color: white;
-    ;
     padding: 10px;
     margin-top: 0px;
-   background-image: linear-gradient(grey 10%, black);
-   border: whitesmoke 3px outset;
-   border-radius: 5px;
+   background-image: linear-gradient(grey 0.5%, rgb(39, 39, 39));
+   border-style: hidden;
 }
 
 .searchBox {font-size: 15px; padding: 10px; float: left; width: auto;}
@@ -30,11 +28,6 @@ input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
    display: block;
    border-radius: 50px;
   
-}
-
-.shopping-cart {
-
-   border: outset whitesmoke 5px;
 }
 
 
@@ -57,13 +50,18 @@ button {
    font-size: 15px;
    border-radius: 5px;
    border: black 2px outset;
+   background-image: linear-gradient(whitesmoke, grey 95%);
+   
 
  }
 
  button:hover
  {
-    background-color: whitesmoke;
- }
+    background-image: linear-gradient(rgb(151, 151, 151) 40%, rgb(7, 7, 7));
+    color: whitesmoke;
+    
+  }
+ 
 
 a {
    color:whitesmoke;
@@ -81,7 +79,7 @@ label {
    color: white;
    padding-right: 100px;
    margin-top: 0px;
-   border: whitesmoke ;
+  
 }
 
 .shopping-cart {
@@ -91,34 +89,26 @@ label {
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
   border-radius: 6px;
 
+
   display: flex;
   flex-direction: column;
 
-  background-image: linear-gradient(grey 95%, black)
+  background-image: linear-gradient(grey 0.5%, rgb(39, 39, 39));
+
+  border: black outset 5px;
+  
 }
 
 .title {
-  height: 60px;
-  border-bottom: 1px solid #E1E8EE;
-  padding: 40px;
-  padding-left: 80px;
-  color: #5E6977;
   font-size: 18px;
-  font-weight: 400;
-  margin-right: 80px;
+ text-align: center;
+  border: outset 5px whitesmoke;
 }
 
 .item {
   padding: 20px 30px;
   height: 120px;
   display: flex;
-}
-
-
-/* Buttons -  Delete and Like */
-.buttons {
-  position: relative;
-  padding-top: 30px;
 }
 
 
@@ -134,12 +124,16 @@ label {
   width: 115px;
 }
 
+.total-price
+{
+  float: left;
+}
 
 
 /* Product Quantity */
 .quantity {
   padding-top: 20px;
-  margin-right: 60px;
+  margin-left: 1222px;
 }
 .quantity input {
   border: none;
@@ -149,14 +143,7 @@ label {
   font-weight: 300;
 }
 
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
+
 
 .totals {
   text-align: right;
@@ -171,24 +158,23 @@ button[class*=btn] {
       
       
      .grandTotal {
-      background-color: gray;
+      background-image: linear-gradient(grey 0.5%, rgb(39, 39, 39));
       border: black outset 5px;
     } 
     
     .checkout {
       float: right;
-      border: 0;
+      border: inset black;
       margin-top: 20px;
-      padding: 6px 25px;
-      background-color: #6b6;
-      color: #fff;
-      font-size: 25px;
-      border-radius: 3px;
+      margin-bottom: 20px;
+      padding: 15px ;
+      color: rgb(10, 9, 9);
+      font-size: 20px;
+      border-radius: 5px;
     }
     
-    .checkout:hover {
-      background-color: #494;
-    }
+
+    
     
     
     
