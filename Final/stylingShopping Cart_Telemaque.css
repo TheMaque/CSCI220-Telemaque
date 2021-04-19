@@ -2,11 +2,7 @@ html {background-color: rgb(34, 34, 34);}
    
 h1 {padding: 20px; font-size: 80px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke;}
 
-<<<<<<< HEAD
-h2 {text-align: left; padding: 75px; font-size: 20px;}
-=======
 h2 {text-align: left;  font-size: 25px; color: whitesmoke;}
->>>>>>> ba3e8829bf048c53f66d4da791a4f725cfd478af
 
 body {font-family: Verdana, Geneva, Tahoma, sans-serif; color: whitesmoke; }
 
@@ -36,14 +32,12 @@ input{border: black 2px outset; border-radius: 5px; width: auto; height: auto;}
   
 }
 
-<<<<<<< HEAD
 .shopping-cart {
 
    border: outset whitesmoke 5px;
 }
 
-=======
->>>>>>> ba3e8829bf048c53f66d4da791a4f725cfd478af
+
 li {
    display: inline;
    padding: 10px;
