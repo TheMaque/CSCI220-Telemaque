@@ -53,41 +53,46 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
         
             <h2>Your Cart.</h2>
             <div class="title">
-            <label class="product-image">Image:</label> 
-            <label class="price">Price:</label>
-            <label class="manufacturer">Manufacturer:</label>
-            <label class="productName">Product Name:</label>
-            <label class="itemid">Item ID:</label>
-            <label class="product-description">Descripton:</label>  
-            <label class="available">Available:</label>
-            <label class="quanity">Quantity:</label>
+            <label class="product-image-label">Image:</label> 
+            <label class="product-details-label">Product:</label>
+            <label class="product-itemid-label">Item ID:</label> 
+            <label class="product-available-label">Available:</label>
+            <label class="product-quantity-label">Quantity:</label>
+            <label class="product-price-label">Price:</label>
         </div>
   
 
      
         <!-- Product #1 -->
-        <div class="item">
-          <div class="buttons">
+
+        <div class="product">
+          <div class="product-image">
+            <img src="https://media.sweetwater.com/images/items/120/SM57-medium.jpg">
           </div>
-  
-          <div class="image">
-            <img src="https://media.sweetwater.com/images/items/120/SM57-medium.jpg" alt="" />
+          <div class="product-details">
+            <div class="product-manufacturer">Shure</div>
+            <div class="product-title">SM57</div>
+            <p class="product-description">Dynamic Microphone with Cardioid Pickup Pattern, 40Hz-15kHz Frequency Response, Low Impedance, Includes Stand Adapter, and Zippered Carrying Case</p>
           </div>
-  
-          <div class="description">
-            <span>Shure Sm57</span>
-           
+       
+          <div class="product-itemid">SM57
+
           </div>
+
+          <div class="product-available">9</div>
   
           <div class="quantity">
          
-            <input type="number" name="name" value="1">
+            <select class="1-5"></select>
            
           </div>
-  
+          
+          <div class="product-removal">
+            <button class="remove-product">REMOVE</button>
+          </div>
         
         </div>
-  
+   
         
         </div>
 
@@ -124,7 +129,9 @@ This assignment is primarily intended to demonstrate your ability to use JavaScr
 
 <!-- Javascript call out. -->
 <script src="../jquery-3.6.0.js"></script>
+<script src="items.js"></script>
 <script src="scriptShopping Cart_Telemaque.js"></script>
+
 
 </body>
 

@@ -102,23 +102,31 @@ label {
 .title {
   font-size: 5px;
   border: outset 5px whitesmoke;
-  margin-left: 5px;
+  margin-left: 50px;
+  margin-right: 800px;
 }
 
-.item {
-  padding: 20px 30px;
-  height: 120px;
+.product {
+  padding: 20px 60px;
   display: flex;
+}
+
+.product-available{
+  margin-left: 75px;
 }
 
 
 /* Product Image */
-.image {
-  margin-right: 75px;
+.product-image {
+  margin-right: 50px;
+
+  padding-left: 50px;
+
+  
 }
 
 /* Product Description */
-.description {
+.product-details {
   padding-top: 10px;
   margin-right: 60px;
   width: 115px;
@@ -129,20 +137,35 @@ label {
   float: left;
 }
 
+select {
+
+  padding: 10px;
+  border-left: none;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+  border: black 2px outset;
+  background-image: linear-gradient(whitesmoke, grey 95%);
+}
+
+
+.product-removal {
+  float: right;
+  padding-top: 20px;
+  margin-left: 350px;
+}
 
 /* Product Quantity */
 .quantity {
   padding-top: 20px;
-  margin-left: 1222px;
-}
-.quantity input {
-  border: none;
-  text-align: center;
-  width: 32px;
-  font-size: 16px;
-  font-weight: 300;
+  margin-left: 230px;
 }
 
+
+.product-line-price {
+  float: right;
+  width: 70px;
+}
 
 
 .totals {
