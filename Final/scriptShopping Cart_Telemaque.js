@@ -77,3 +77,13 @@ $('.product-quantity input').change( function() {
       recalculateCart();
     });
   }
+
+// Var and Constructors
+
+  document.getElementById("item1-description").innerHTML =
+
+  item1.description
+
+  document.getElementById("item1-description").innerHTML =
+
+  item1.description
