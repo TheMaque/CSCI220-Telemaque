@@ -11,7 +11,7 @@ var item1 = {
 };
 
 var item2 = {
-    image: "https://media.sweetwater.com/images/guitars/SGS17HCCH/170099523/170099523-body-small.jpg",
+    image: "https://media.sweetwater.com/api/i/f-webp__q-82__ha-340bda9f117d6b93__hmac-325c0ac72caebc0a389e39f6e2b623340a0d858e/images/items/750/SG61VENH-large.jpg.auto.webp",
     url: "https://www.sweetwater.com/store/detail/SGS17HCCH/sn170099523",
     manufacturer: "Gibson",
     productName: "SG Standard 2017 T - Heritage Cherry",

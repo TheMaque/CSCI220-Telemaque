@@ -80,10 +80,114 @@ $('.product-quantity input').change( function() {
 
 // Var and Constructors
 
+
+// Item 1
+
+document.getElementById("item1-name").innerHTML =
+
+item1.productName
+
   document.getElementById("item1-description").innerHTML =
 
-  item1.description
+  item1.description 
+  
+  document.getElementById("item1-price").innerHTML =
 
-  document.getElementById("item1-description").innerHTML =
+  item1.price
 
-  item1.description
+  document.getElementById("item1-available").innerHTML =
+
+  item1.available
+
+
+  document.getElementById("item1-itemid").innerHTML =
+
+  item1.itemid
+
+  document.getElementById("item1-manufacturer").innerHTML =
+
+  item1.manufacturer
+
+
+  // Item 2
+
+  document.getElementById("item2-name").innerHTML =
+
+  item2.productName
+  
+    document.getElementById("item2-description").innerHTML =
+  
+    item2.description 
+    
+    document.getElementById("item2-price").innerHTML =
+  
+    item2.price
+  
+    document.getElementById("item2-available").innerHTML =
+  
+    item2.available
+  
+  
+    document.getElementById("item2-itemid").innerHTML =
+  
+    item2.itemid
+  
+    document.getElementById("item2-manufacturer").innerHTML =
+  
+    item2.manufacturer
+
+
+    // Item 3
+
+    document.getElementById("item3-name").innerHTML =
+
+    item3.productName
+    
+      document.getElementById("item3-description").innerHTML =
+    
+      item3.description 
+      
+      document.getElementById("item3-price").innerHTML =
+    
+      item3.price
+    
+      document.getElementById("item3-available").innerHTML =
+    
+      item3.available
+    
+    
+      document.getElementById("item3-itemid").innerHTML =
+    
+      item3.itemid
+    
+      document.getElementById("item3-manufacturer").innerHTML =
+    
+      item3.manufacturer
+
+
+        // Item 4
+
+     document.getElementById("item4-name").innerHTML =
+
+     item4.productName
+     
+       document.getElementById("item4-description").innerHTML =
+     
+       item4.description 
+       
+       document.getElementById("item4-price").innerHTML =
+     
+       item4.price
+     
+       document.getElementById("item4-available").innerHTML =
+     
+       item4.available
+     
+     
+       document.getElementById("item4-itemid").innerHTML =
+     
+       item4.itemid
+     
+       document.getElementById("item4-manufacturer").innerHTML =
+     
+       item4.manufacturer
