@@ -127,7 +127,7 @@ label {
 .product-image {
   margin-right: 50px;
 
-
+  padding-left: 25px;
 
   
 }
@@ -176,7 +176,7 @@ select {
 
 }
 
-img {height: 8em;}
+.product-image{height: 5em;}
 
 .totals {
   text-align: right;
