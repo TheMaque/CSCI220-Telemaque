@@ -68,11 +68,17 @@ function removeItem(removeButton)
 {
   /* Remove row from DOM and recalc cart total */
   var productRow = $(removeButton).parent().parent();
-  productRow.click(fadeTime, function() {
+  productRow.click( function() {
     productRow.remove();
     recalculateCart();
   });
 }
+
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+});
 
 // Var and Constructors
 

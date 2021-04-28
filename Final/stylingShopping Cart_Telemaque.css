@@ -103,6 +103,7 @@ label {
 {
   margin-left: 300px;
   padding-top: 10px;
+  
 }
 
 
@@ -207,3 +208,6 @@ select {
       border-radius: 5px;
     }
   
+    .product .product-price:before, .product .product-price:before, .totals-value:before {
+      content: '$';
+    }
