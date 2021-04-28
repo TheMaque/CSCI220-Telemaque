@@ -125,9 +125,10 @@ label {
 
 
 .product-image {
-  margin-right: 50px;
+  margin-right: 60px;
+  padding-left: 30px;
 
-  padding-left: 25px;
+ 
 
   
 }
@@ -136,8 +137,6 @@ label {
 .product-details {
   padding-top: 10px;
   margin-right: 60px;
-
-  
 }
 
 
@@ -168,7 +167,9 @@ select {
 .quantity {
   padding-top: 20px;
   margin-left: 300px;
+  
 }
+
 
 .product-itemid
 {

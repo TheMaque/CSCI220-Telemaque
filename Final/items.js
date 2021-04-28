@@ -36,7 +36,7 @@ var item3 = {
 };
 
 var item4 = {
-    image: "https://media.sweetwater.com/images/items/120/R16-medium.jpg",
+    image: "https://media.sweetwater.com/api/i/f-webp__q-75__ha-6bfabc8f5d55d547__hmac-c2cc07fce658c795c9589878044700caa2978518/images/items/75/R16-small.jpg",
     url: "https://www.sweetwater.com/store/detail/R16",
     manufacturer: "Zoom",
     productName: "R16",

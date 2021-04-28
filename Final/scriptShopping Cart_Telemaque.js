@@ -1,82 +1,78 @@
-        
-$(function(){
-    var $select = $(".1-5");
-    for (i=1;i<=5;i++){
-        $select.append($('<option></option>').val(i).html(i))
-    }
-});
+var taxRate = 0.07;
+var fadeTime = 300;
+   
+
+
 
 /* Assign actions */
-$('.product-quantity input').change( function() {
-    updateQuantity(this);
+$('.quantity select').change( function() {
+  updateQuantity(this);
+});
+
+$('.product-removal button').click( function() {
+  removeItem(this);
+});
+
+
+/* Recalculate cart */
+function recalculateCart()
+{
+  var subtotal = 0;
+  
+  /* Sum up row totals */
+  $('.product').each(function () {
+    subtotal += parseFloat($(this).children('.product-price').text());
   });
   
-  $('.product-removal button').click( function() {
-    removeItem(this);
+  /* Calculate totals */
+  var tax = subtotal * taxRate;
+  var total = subtotal + tax;
+  
+  /* Update totals display */
+  $('.totals-value').fadeOut(fadeTime, function() {
+    $('#cart-subtotal').html(subtotal.toFixed(2));
+    $('#cart-tax').html(tax.toFixed(2));
+    $('#cart-total').html(total.toFixed(2));
+    if(total == 0){
+      $('.checkout').fadeOut(fadeTime);
+    }else{
+      $('.checkout').fadeIn(fadeTime);
+    }
+    $('.totals-value').fadeIn(fadeTime);
   });
+}
+
+
+/* Update quantity */
+function updateQuantity(quantityInput)
+{
+  /* Calculate line price */
+  var productRow = $(quantityInput).parent().parent();
+  var price = parseFloat(productRow.children('.product-price').text());
+  var quantity = $(quantityInput).val();
+  var linePrice = price * quantity;
   
-  
-  /* Recalculate cart */
-  function recalculateCart()
-  {
-    var subtotal = 0;
-    
-    /* Sum up row totals */
-    $('.product').each(function () {
-      subtotal += parseFloat($(this).children('.product-line-price').text());
-    });
-    
-    /* Calculate totals */
-    var tax = subtotal * taxRate;
-    var shipping = (subtotal > 0 ? shippingRate : 0);
-    var total = subtotal + tax + shipping;
-    
-    /* Update totals display */
-    $('.totals-value').fadeOut(fadeTime, function() {
-      $('#cart-subtotal').html(subtotal.toFixed(2));
-      $('#cart-tax').html(tax.toFixed(2));
-      $('#cart-shipping').html(shipping.toFixed(2));
-      $('#cart-total').html(total.toFixed(2));
-      if(total == 0){
-        $('.checkout').fadeOut(fadeTime);
-      }else{
-        $('.checkout').fadeIn(fadeTime);
-      }
-      $('.totals-value').fadeIn(fadeTime);
-    });
-  }
-  
-  
-  /* Update quantity */
-  function updateQuantity(quantityInput)
-  {
-    /* Calculate line price */
-    var productRow = $(quantityInput).parent().parent();
-    var price = parseFloat(productRow.children('.product-price').text());
-    var quantity = $(quantityInput).val();
-    var linePrice = price * quantity;
-    
-    /* Update line price display and recalc cart totals */
-    productRow.children('.product-line-price').each(function () {
-      $(this).fadeOut(fadeTime, function() {
-        $(this).text(linePrice.toFixed(2));
-        recalculateCart();
-        $(this).fadeIn(fadeTime);
-      });
-    });  
-  }
-  
-  
-  /* Remove item from cart */
-  function removeItem(removeButton)
-  {
-    /* Remove row from DOM and recalc cart total */
-    var productRow = $(removeButton).parent().parent();
-    productRow.slideUp(fadeTime, function() {
-      productRow.remove();
+  /* Update line price display and recalc cart totals */
+  productRow.children('.product-price').each(function () {
+    $(this).fadeOut(fadeTime, function() {
+      $(this).text(linePrice.toFixed(2));
       recalculateCart();
+      $(this).fadeIn(fadeTime);
     });
-  }
+  });  
+}
+
+
+/* Remove item from cart */
+function removeItem(removeButton)
+{
+  /* Remove row from DOM and recalc cart total */
+  var productRow = $(removeButton).parent().parent();
+  productRow.click(fadeTime, function() {
+    productRow.remove();
+    recalculateCart();
+  });
+}
 
 // Var and Constructors
 
@@ -191,3 +187,12 @@ item1.productName
        document.getElementById("item4-manufacturer").innerHTML =
      
        item4.manufacturer
+
+
+// Quantity button.
+       $(function(){
+        var $select = $(".1-5");
+        for (i=1;i<=5;i++){
+            $select.append($('<option></option>').val(i).html(i))
+        }
+    });
