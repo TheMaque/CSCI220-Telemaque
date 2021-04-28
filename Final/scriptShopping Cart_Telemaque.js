@@ -1,3 +1,4 @@
+// Callout for setting static rates. 
 var taxRate = 0.07;
 var fadeTime = 300;
    
