@@ -3,9 +3,8 @@ var fadeTime = 300;
    
 
 
-
 /* Assign actions */
-$('.quantity select').change( function() {
+$('.quantitySelector select').change( function() {
   updateQuantity(this);
 });
 
@@ -193,7 +192,7 @@ item1.productName
 
 // Quantity button.
        $(function(){
-        var $select = $(".1-5");
+        var $select = $(".quantitySelector");
         for (i=1;i<=5;i++){
             $select.append($('<option></option>').val(i).html(i))
         }
